@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Add a Category</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-30">
+            <div class="card-body">
+                <form action="/admin/addCategory" method="post" enctype="multipart/form-data">
+                 {{#if category}}
+                    <p class="text-success">Category Added</p>
+                    {{/if}}
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Category Name</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" placeholder="Enter Username" type="text" name="Categoryname">
+                                {{!-- <span id="username-err" class=" text-danger"></span> --}}
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6">
+                            <label class="col-sm-12 col-form-label">Status</label>
+                            <div class="col-sm-12">
+                                <select name="status" class="form-control">
+                                    <option>Select</option>
+                                    <option>Active</option>
+                                    <option>Deactive</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">File Upload</label>
+                            <div class="col-sm-12">
+
+                                <input class="form-control h-100" placeholder="Enter product name" type="file"
+                                    name="image" id="example-text-input">
+                            </div>
+                        </div>
+
+                        <div class="text-right mt-3 col-md-12">
+                            <button type="submit" class="btn btn-light waves-effect mr-4">Cancel</button>
+                            <button type="submit" class="btn btn-success waves-effect waves-light">Save</button>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div> <!-- end col -->
+</div>

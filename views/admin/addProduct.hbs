@@ -1,0 +1,138 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Add a Product</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-30">
+            <div class="card-body">
+                <form action="/admin/addProduct" method="post" enctype="multipart/form-data">
+                {{#if productAdded}}
+                <p class="text-success">Product Added succesfully</p>
+                {{/if}}
+                    <div class="row">
+                        
+                        <div class="form-group   col-md-6">
+                            <label class="col-sm-12 col-form-label">Category</label>
+                            <div class="col-sm-12">
+                                <select name="category" class="form-control">
+                                    <option>Select</option>
+                                    {{#each category}}
+                                    <option>{{this.Categoryname}}</option>
+                                    {{/each}}
+                                   
+                                </select>
+                            </div>
+                        </div>
+
+                         <div class="form-group   col-md-6">
+                            <label class="col-sm-12 col-form-label">Sub Category</label>
+                            <div class="col-sm-12">
+                                <select name="subcategory" class="form-control">
+                                    <option>Select</option>
+                                    {{#each subcategory}}
+                                    <option>{{this.SubCategoryname}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group  col-md-6">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Product Name</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" placeholder="Enter product name" type="text" name="Name"
+                                    id="example-text-input">
+                            </div>
+                        </div>
+                             
+                             <div class="form-group   col-md-6">
+                            <label class="col-sm-12 col-form-label">Brand</label>
+                            <div class="col-sm-12">
+                                <select name="brand" class="form-control">
+                                    <option>Select</option>
+                                    {{#each brand}}
+                                    <option>{{this.brand}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group  col-md-6">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Color</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" placeholder="Enter Color" type="text" name="color"
+                                    id="example-text-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group  col-md-6">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Size</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" placeholder="Enter Size" type="text" name="Size"
+                                    id="example-text-input">
+                            </div>
+                        </div>
+                
+                         <div class="form-group  col-md-6">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Stock</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" name="stock" placeholder="" type="text" 
+                                    id="example-text-input">
+                            </div>
+                        </div>
+                         <div class="form-group  col-md-6">
+                            <label class="col-sm-12 col-form-label">Price</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" name="price" placeholder="" type="number">
+                            </div>
+                        </div>
+                         <div class="form-group  col-md-6">
+                            <label class="col-sm-12 col-form-label">Discounted Price</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" name="discounted_price" placeholder="" type="number">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Description</label>
+                            <div class="col-sm-12">
+                                    <textarea class="form-control" name="description" rows="4" cols="50">
+                                    </textarea>
+
+                            </div>
+                        </div>
+                        <input type="text" name="status" value="true" hidden> 
+                         <div class="form-group col-md-12">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">File Upload</label>
+                            <div class="col-sm-12">
+                                 
+                            <input class="form-control h-100" multiple placeholder="Enter product name" type="file" name="image"
+                                    id="example-text-input">
+                            </div>
+                        </div>
+                        
+                            <div class="text-right mt-3 col-md-12" >
+                                <button type="submit" class="btn btn-light waves-effect mr-4">Cancel</button>
+                                <button type="submit"
+                                    class="btn btn-success waves-effect waves-light">Save</button>
+
+                            </div>
+                </form>
+            </div>
+
+        </div>
+
+        
+    </div>  
+</div> <!-- end col -->
+
+
+
+
+</div>
+
+<script defer src="https://cdn.crop.guide/loader/l.js?c=XNRVNN"></script>
+

@@ -1,0 +1,153 @@
+
+
+    <header>
+        <div id="header-sticky" class="header-area header-transparent-2 header-sticky header-sticky-white">
+            <div class="header-main header-main-1 header-main-2 header-main-3 header-padding pl-50 pr-50">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-6 col-sm-4 col-4">
+                            <div class="header-left p-rel d-flex align-items-center">
+                                <div class="logo pr-55 d-inline-block">
+                                  <a href="/"><img src="/images/logo.png"  alt="#"></a>
+                                </div>
+                                <div class="main-menu main-menu-3">
+                                    <nav id="mobile-menu">
+                                       
+                                        <ul>
+                                            <li><a href="/">Home</a></li>
+                                              <li>
+                                                <a href="/allProducts">Shop</a>
+                                                <ul class="sub-menu">
+                                                    {{#each category}}
+                                                    <li><a href="/categoryview/{{this._id}}">{{this.Categoryname}}</a></li>
+                                                    {{/each}}
+                                                </ul>
+                                            </li>
+                                      
+                                            <li>
+                                                <a href="#">About Us</a>
+                                            </li>
+                                            <li><a href="#">Contact Us</a></li>
+                                            <li class="d-md-none"><a href="profile">Profile</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-8 col-8">
+                            <div class="header-right-wrapper d-flex align-items-center justify-content-end">
+                                <div class="header-right header-right-3 d-flex align-items-center justify-content-end">
+                                    {{!-- <a href="/login" class="d-none d-xxl-inline-block">Login / Register</a> --}}
+                                    <div class="header-icon header-icon-3 d-inline-block ml-30">
+                                        {{!-- <a href="javascript:void(0)" class="search-toggle d-none d-sm-inline-block"><i class="fal fa-search"></i></a> --}}
+                                        {{!-- <a href="wishlist.html" class="d-none d-xl-inline-block"><i class="fal fa-heart"></i><span>2</span></a> --}}
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#cartMiniModal"><a href="/cart"><i class="fal fa-shopping-cart text-white"></i><span class="text-white" id="cartCount">{{cartcount}}</span></a></button>
+                                    </div>
+                                </div>
+                                <div class="main-menu">
+                                    <nav id="mobile-menu ">
+                                        <ul>
+                                            <li class="header-icon d-inline-block">
+                                               <a href="#" class="d-none d-xl-inline-block"><i class=" fal fa-user ms-3 text-white" style="font-size:20px; color:rgb(0, 0, 0) !important;"></i></a>
+                                                
+                                                {{#if  login}}
+                                                <ul class="sub-menu r-0">
+                                                    <li><a href="/profile">Profile</a></li>
+                                                    <li><a href="/orders">Orders</a></li>
+                                                    <li><a href="/logout">Logout</a></li>
+                                                </ul>
+                                                {{else}}
+                                                 <ul class="sub-menu r-0">
+                                                    <li><a href="/login">Login</a></li>
+                                                </ul>
+                                                {{/if}}
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                            
+                                </div>
+                                <div class="header-bar ml-20 d-lg-none">
+                                    <button type="button" class="header-bar-btn header-bar-btn-black" data-bs-toggle="modal" data-bs-target="#offCanvasModal">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+     <!-- sidebar area start -->
+    <section class="offcanvas__area">
+        <div class="modal fade" id="offCanvasModal" tabindex="-1" aria-labelledby="offCanvasModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="offcanvas__wrapper">
+                        <div class="offcanvas__top d-flex align-items-center mb-60 justify-content-between">
+                            <div class="logo">
+                                <a href="index.html">
+                                   <img src="/images/logo.png" alt="logo">
+                                </a>
+                             </div>
+                           <div class="offcanvas__close">
+                              <button class="offcanvas__close-btn" data-bs-toggle="modal" data-bs-target="#offCanvasModal">
+                                 <svg viewBox="0 0 22 22">
+                                    <path d="M12.41,11l5.29-5.29c0.39-0.39,0.39-1.02,0-1.41s-1.02-0.39-1.41,0L11,9.59L5.71,4.29c-0.39-0.39-1.02-0.39-1.41,0
+                                    s-0.39,1.02,0,1.41L9.59,11l-5.29,5.29c-0.39,0.39-0.39,1.02,0,1.41C4.49,17.9,4.74,18,5,18s0.51-0.1,0.71-0.29L11,12.41l5.29,5.29
+                                    C16.49,17.9,16.74,18,17,18s0.51-0.1,0.71-0.29c0.39-0.39,0.39-1.02,0-1.41L12.41,11z"/>
+                                 </svg>
+                              </button>
+                           </div>
+                        </div>
+                        <div class="offcanvas__content p-relative z-index-1">
+                           <div class="canvas__menu">
+                              <div class="mobile-menu fix"></div>
+                           </div>
+                           {{#if  login}}
+                           <div class="offcanvas__action mb-15">
+                              <a href="/logout">LogOut</a>
+                           </div>
+                           {{else}}
+                            <div class="offcanvas__action mb-15">
+                              <a href="/login">Login</a>
+                           </div>
+                           {{/if}}
+                          
+                           <div class="offcanvas__action mb-15 d-sm-block">
+                              <a href="/cart" class="has-tag">
+                                <i class="far fa-shopping-bag"></i>
+                                <span class="tag">{{cartcount}}</span>
+                              </a>
+                           </div>
+                           <div class="offcanvas__social mt-15">
+                              <ul>
+                                 <li>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                 </li>
+                                 <li>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                 </li>
+                                 <li>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                 </li>
+                                 <li>
+                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                 </li>
+                                 <li>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        
+     </section>
+     <!-- sidebar area end -->

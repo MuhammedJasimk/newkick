@@ -1,0 +1,504 @@
+<!-- sidebar area start -->
+<section class="offcanvas__area">
+    <div class="modal fade" id="offCanvasModal" tabindex="-1" aria-labelledby="offCanvasModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="offcanvas__wrapper">
+                    <div class="offcanvas__top d-flex align-items-center mb-60 justify-content-between">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="/images/logo/logo-black.png" alt="logo">
+                            </a>
+                        </div>
+                        <div class="offcanvas__close">
+                            <button class="offcanvas__close-btn" data-bs-toggle="modal"
+                                data-bs-target="#offCanvasModal">
+                                <svg viewBox="0 0 22 22">
+                                    <path
+                                        d="M12.41,11l5.29-5.29c0.39-0.39,0.39-1.02,0-1.41s-1.02-0.39-1.41,0L11,9.59L5.71,4.29c-0.39-0.39-1.02-0.39-1.41,0
+                                    s-0.39,1.02,0,1.41L9.59,11l-5.29,5.29c-0.39,0.39-0.39,1.02,0,1.41C4.49,17.9,4.74,18,5,18s0.51-0.1,0.71-0.29L11,12.41l5.29,5.29
+                                    C16.49,17.9,16.74,18,17,18s0.51-0.1,0.71-0.29c0.39-0.39,0.39-1.02,0-1.41L12.41,11z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="offcanvas__content p-relative z-index-1">
+                        <div class="canvas__menu">
+                            <div class="mobile-menu fix"></div>
+                        </div>
+                        <div class="offcanvas__action mb-15">
+                            <a href="login.html">Login</a>
+                        </div>
+                        <div class="offcanvas__action mb-15 ">
+                            <a href="wishlist.html" class="has-tag">
+                                <svg viewBox="0 0 22 22">
+                                    <path
+                                        d="M20.26,11.3c2.31-2.36,2.31-6.18-0.02-8.53C19.11,1.63,17.6,1,16,1c0,0,0,0,0,0c-1.57,0-3.05,0.61-4.18,1.71c0,0,0,0,0,0
+                                    L11,3.41l-0.81-0.69c0,0,0,0,0,0C9.06,1.61,7.58,1,6,1C4.4,1,2.89,1.63,1.75,2.77c-2.33,2.35-2.33,6.17-0.02,8.53
+                                    c0,0,0,0.01,0.01,0.01l0.01,0.01c0,0,0,0,0,0c0,0,0,0,0,0L11,20.94l9.25-9.62c0,0,0,0,0,0c0,0,0,0,0,0L20.26,11.3
+                                    C20.26,11.31,20.26,11.3,20.26,11.3z M3.19,9.92C3.18,9.92,3.18,9.92,3.19,9.92C3.18,9.92,3.18,9.91,3.18,9.91
+                                    c-1.57-1.58-1.57-4.15,0-5.73C3.93,3.42,4.93,3,6,3c1.07,0,2.07,0.42,2.83,1.18C8.84,4.19,8.85,4.2,8.86,4.21
+                                    c0.01,0.01,0.01,0.02,0.03,0.03l1.46,1.25c0.07,0.06,0.14,0.09,0.22,0.13c0.01,0,0.01,0.01,0.02,0.01c0.13,0.06,0.27,0.1,0.41,0.1
+                                    c0.08,0,0.16-0.03,0.25-0.05c0.03-0.01,0.07-0.01,0.1-0.02c0.07-0.03,0.13-0.07,0.2-0.11c0.03-0.02,0.07-0.03,0.1-0.06l1.46-1.24
+                                    c0.01-0.01,0.02-0.02,0.03-0.03c0.01-0.01,0.03-0.01,0.04-0.02C13.93,3.42,14.93,3,16,3c0,0,0,0,0,0c1.07,0,2.07,0.42,2.83,1.18
+                                    c1.56,1.58,1.56,4.15,0,5.73c0,0,0,0.01-0.01,0.01c0,0,0,0,0,0L11,18.06L3.19,9.92z" />
+                                </svg>
+                                <span class="tag">2</span>
+                            </a>
+                        </div>
+                        <div class="offcanvas__action mb-15 d-sm-block">
+                            <a href="cart.html" class="has-tag">
+                                <i class="far fa-shopping-bag"></i>
+                                <span class="tag">4</span>
+                            </a>
+                        </div>
+                        <div class="offcanvas__social mt-15">
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- sidebar area end -->
+
+<main>
+
+    <!-- breadcrumb area start -->
+    <div class="breadcrumb-area mb-105" >
+        <div>
+        {{!-- <div class="container">
+            <div class="breadcrumb-title text-center">
+            </div>
+            <div class="breadcrumb-list">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <span>Shop Sidebar</span>
+            </div>
+        </div> --}}
+    </div>
+    </div>
+    <!-- breadcrumb area end -->
+<div class="w-100 "  style="height:10px; box-shadow:0px 12px 20px 0px rgb(8 0 42 / 8%)"></div>
+    <!-- shop area start -->
+    <div class="shop-area mb-70 mt-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-3 col-xl-3 col-lg-4 mt-40">
+                    <div class="shop-sidebar-area pt-7 pr-60">
+                        <div class="single-widget pb-50 mb-50">
+                            <h4 class="widget-title">Product Categories</h4>
+                            {{!-- <div class="widget-category-list">
+                                <form action="#">
+                                    {{#each subcat}}
+                                    <div>
+                                        <a class="bg-transparent py-2"
+                                            href="/getsubcatProduct/{{this._id}}">{{this.SubCategoryname}}</a>
+                                    </div>
+                                    {{/each}}
+
+                                </form>
+                            </div> --}}
+
+                            <div class="accordion" id="accordionExample">
+                                {{#each category}}
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="{{this._id}}">
+                                        <button class="accordion-button bg-white text-dark " type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#{{this.Categoryname}}" aria-expanded="true"
+                                            aria-controls="{{this.Categoryname}}">
+                                           {{this.Categoryname}}
+                                        </button>
+                                    </h2>
+                                    <div id="{{this.Categoryname}}" class="accordion-collapse collapse"
+                                        aria-labelledby="{{this._id}}" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                {{#each ../subcat}}
+                                                <li >
+                                                    <a class="bg-transparent py-4 "
+                                                        href="/getsubcatProduct/{{this._id}}/{{../this._id}}">{{this.SubCategoryname}}</a>
+                                                </li>
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xxl-9 col-xl-9 col-lg-8 order-first order-lg-last">
+                    <div class="shop-top-area mb-40">
+                        <div class="row justify-content-end">
+
+                        </div>
+                    </div>
+                    <!-- /. shop top area -->
+                    <div class="shop-main-area">
+                        {{!-- <h1>tsts</h1>
+                        <div id="rslt">
+                            {{log "dsd"}}
+                            {{log rslt}}
+                            {{console.log (rslt)}}
+                        </div> --}}
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade  show active" id="tab1">
+                                <div class="row pb-20">
+                                    {{#each product}}
+                                    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                        <div class="single-product mb-15 wow fadeInUp" data-wow-delay=".6s">
+                                            <div class="product-thumb">
+                                                <a href="/product_detail/{{this._id}}">
+                                                    <img src="/images/product/{{this.image.[0]}}" alt="#">
+                                                    <img src="/images/product/{{this.image.[1]}}" alt="#">
+                                                </a>
+                                                <div class="cart-btn cart-btn-1 p-abs">
+                                                    {{!-- <a href="/addToCart/{{this._id}}">Add to cart</a> --}}
+                                                    <button onclick="addToCart('{{this._id}}')"
+                                                        class="w-100 cart-btn cart-btn-1 p-abs">Add to carts</button>
+                                                </div>
+                                                {{!-- <div class="product-action product-action-1 p-abs">
+                                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal"
+                                                        data-bs-target="#productModal">
+                                                        <i class="fal fa-eye"></i>
+                                                        <i class="fal fa-eye"></i>
+                                                    </a>
+                                                    <a href="#" class="icon-box icon-box-1">
+                                                        <i class="fal fa-heart"></i>
+                                                        <i class="fal fa-heart"></i>
+                                                    </a>
+                                                    <a href="#" class="icon-box icon-box-1">
+                                                        <i class="fal fa-layer-group"></i>
+                                                        <i class="fal fa-layer-group"></i>
+                                                    </a>
+                                                </div> --}}
+                                            </div>
+                                            <div class="product-content">
+                                                <div style="min-height:40px; max-height:40px;">
+                                                    <h4 class="pro-title pro-title-1"><a
+                                                            href="/product_detail/{{this._id}}"> {{this.Name}}</a></h4>
+                                                </div>
+                                                <div class="pro-price">
+
+                                                    {{#if this.offer}}
+                                                    <div class="pro-price">
+                                                        <span class="text-danger fw-bold"><span>Rs </span>
+                                                            {{this.discounted_price}}</span>
+                                                        <del class="ms-4"><span class="fw-bold">Rs </span>
+                                                            {{this.price}}</del>
+                                                    </div>
+                                                    {{else}}
+                                                    <div class="pro-price">
+                                                        <span class="text-danger fw-bold"><span>Rs </span>
+                                                            {{this.discounted_price}}</span>
+                                                        {{!-- <del class="ms-4"><span class="fw-bold">Rs </span>
+                                                            {{this.price}}</del> --}}
+                                                    </div>
+                                                    {{/if}}
+
+
+                                                </div>
+                                                {{!-- <div class="rating">
+                                                    <i class="fal fa-star active"></i>
+                                                    <i class="fal fa-star active"></i>
+                                                    <i class="fal fa-star"></i>
+                                                    <i class="fal fa-star"></i>
+                                                    <i class="fal fa-star"></i>
+                                                </div> --}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    {{!-- <div class="shop-pagination">
+                        <div class="basic-pagination">
+                            <nav>
+                                <ul>
+                                    <li>
+                                        <a href="shop.html">
+                                            <i class="far fa-angle-left"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="shop.html">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="shop.html" class="active">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="shop.html">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="shop.html">
+                                            <i class="far fa-angle-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div> --}}
+                    <!-- /. shop main area -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- shop area end -->
+
+    {{!-- <!-- product modal area start -->
+    <div class="product__modal-area modal fade" id="productModal" tabindex="-1" role="dialog"
+        aria-labelledby="productModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="product__modal-inner position-relative">
+                    <div class="product__modal-close">
+                        <button data-bs-dismiss="modal" aria-label="Close">
+                            <i class="ti-close"></i>
+                        </button>
+                    </div>
+                    <div class="product__modal-left">
+                        <div class="tab-content mb-10" id="productModalThumb">
+                            <div class="tab-pane fade show active" id="pro-1" role="tabpanel"
+                                aria-labelledby="pro-1-tab">
+                                <div class="product__modal-thumb w-img">
+                                    <img src="images/products/modal/product-modal-1.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pro-2" role="tabpanel" aria-labelledby="pro-2-tab">
+                                <div class="product__modal-thumb w-img">
+                                    <img src="images/products/modal/product-modal-2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pro-3" role="tabpanel" aria-labelledby="pro-3-tab">
+                                <div class="product__modal-thumb w-img">
+                                    <img src="images/products/modal/product-modal-3.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pro-4" role="tabpanel" aria-labelledby="pro-4-tab">
+                                <div class="product__modal-thumb w-img">
+                                    <img src="images/products/modal/product-modal-4.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product__modal-nav">
+                            <ul class="nav nav-tabs" id="productModalNav" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pro-1-tab" data-bs-toggle="tab"
+                                        data-bs-target="#pro-1" type="button" role="tab" aria-controls="pro-1"
+                                        aria-selected="true">
+                                        <img src="images/products/modal/product-modal-sm-1.jpg" alt="">
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pro-2-tab" data-bs-toggle="tab" data-bs-target="#pro-2"
+                                        type="button" role="tab" aria-controls="pro-2" aria-selected="false">
+                                        <img src="images/products/modal/product-modal-sm-2.jpg" alt="">
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pro-3-tab" data-bs-toggle="tab" data-bs-target="#pro-3"
+                                        type="button" role="tab" aria-controls="pro-3" aria-selected="false">
+                                        <img src="images/products/modal/product-modal-sm-3.jpg" alt="">
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pro-4-tab" data-bs-toggle="tab" data-bs-target="#pro-4"
+                                        type="button" role="tab" aria-controls="pro-4" aria-selected="false">
+                                        <img src="images/products/modal/product-modal-sm-4.jpg" alt="">
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product__modal-right">
+                        <h3 class="product__modal-title">
+                            <a href="product-details.html">Living Room Lighting</a>
+                        </h3>
+                        <div class="product__modal-rating d-flex align-items-center">
+                            <ul class="mr-10">
+                                <li>
+                                    <a href="#"><i class="ti-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="ti-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="ti-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="ti-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="ti-star"></i></a>
+                                </li>
+                            </ul>
+                            <div class="customer-review">
+                                <a href="#">(1 customer review)</a>
+                            </div>
+                        </div>
+                        <div class="product__modal-price mb-10">
+                            <span class="price new-price">$700.00</span>
+
+                            <span class="price old-price">$899.99</span>
+                        </div>
+                        <div class="product__modal-available">
+                            <p> Availability: <span>In Stock</span> </p>
+                        </div>
+                        <div class="product__modal-sku">
+                            <p> Sku: <span> 0026AG90-1</span> </p>
+                        </div>
+                        <div class="product__modal-des">
+                            <p>Typi non habent claritatem insitam, est usus legentis in iis qui facit eorum claritatem.
+                                Investigationes demonstraverunt lectores legere me lius quod legunt saepius.…</p>
+                        </div>
+                        <div class="product__modal-quantity mb-15">
+                            <h5>Quantity:</h5>
+                            <form action="#">
+                                <div class="pro-quan-area d-lg-flex align-items-center">
+                                    <div class="product-quantity mr-20 mb-25">
+                                        <div class="cart-plus-minus p-relative"><input type="text" value="1" /></div>
+                                    </div>
+                                    <div class="product__modal-cart mb-25">
+                                        <button class="product-modal-cart-btn " type="submit">Add to cart</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="product__modal-categories d-flex align-items-center">
+                            <span>Categories: </span>
+                            <ul>
+                                <li><a href="#">Decor, </a></li>
+                                <li><a href="#">Lamp, </a></li>
+                                <li><a href="#">Lighting</a></li>
+                            </ul>
+                        </div>
+                        <div class="product__modal-categories d-flex align-items-center">
+                            <span>Tags: </span>
+                            <ul>
+                                <li><a href="#">Furniture, </a></li>
+                                <li><a href="#">Lighting, </a></li>
+                                <li><a href="#">Living Room, </a></li>
+                                <li><a href="#">Table</a></li>
+                            </ul>
+                        </div>
+                        <div class="product__modal-share d-flex align-items-center">
+                            <span>Share this product: </span>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- product modal area start -->        --}}
+
+    {{!-- <!-- popup area start -->
+    <div class="subscribe-popup d-none">
+        <div class="subscribe-wrapper s-popup-padding h-100">
+            <div class="pl-75 pr-75">
+                <div class="row">
+                    <div class="col-xxl-6">
+                        <div class="subscribe-content">
+                            <div class="logo mb-65">
+                                <a href="index.html"><img src="images/logo/logo-black.png" alt=""></a>
+                            </div>
+                            <h4 class="popup-title">Comming Soon</h4>
+                            <p class="popup-desc">We’ll be here soon with our new<br>
+                                awesome site, subscribe to be notified.</p>
+                            <div class="comming-countdown  pb-45">
+                                <div class="countdown-inner" data-countdown="" data-date="Mar 02 2022 20:20:22">
+                                    <ul>
+                                        <li><span data-days="">401</span> Day</li>
+                                        <li><span data-hours="">1</span> hrs</li>
+                                        <li><span data-minutes="">29</span> min</li>
+                                        <li><span data-seconds="">40</span> sec</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="subscribe-form-2">
+                                <input type="email" placeholder="Enter your email...">
+                                <button class="p-btn border-0">Subscribe</button>
+                            </div>
+                            <div class="popup-social">
+                                <a href="#"><i class="fal fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subscribe-thumb" data-background="images/popup/fashion/subscribe-bg.jpg"></div>
+    </div>
+    <!-- popup area end --> --}}
+
+    <!-- subscribe area start -->
+    <div class="subscribe-area pb-100 pt-95 black-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-12">
+                    <div class="section-title text-center">
+                        <span class="p-subtitle p-subtitle-3">OUR NEWSLETTER</span>
+                        <h3 class="p-title pb-15 mb-0 white-text">join our newsletter</h3>
+                        <p class="p-desc p-desc-2 pb-15">Subscribe to the Puik Store mailing list to receive updates on
+                            new
+                            arrivals, special offers<br>
+                            and other discount information.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xxl-8 col-xl-8">
+                    <div class="subscribe-form  gray-form text-center">
+                        <form action="#">
+                            <input type="text" placeholder="Your email address...">
+                            <button type="submit" class="subscribe-btn subscribe-btn-3">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- subscribe area end -->
+
+</main>

@@ -1,0 +1,268 @@
+<!-- Top Bar End -->
+
+<div class="page-content-wrapper ">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="btn-group float-right">
+                        <ol class="breadcrumb hide-phone p-0 m-0">
+                            <li class="breadcrumb-item"><a href="#">Annex</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Dashboard</h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title end breadcrumb -->
+
+
+        <div class="row">
+            <!-- Column -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        <div class="d-flex flex-row">
+                            <div class="col-3 align-self-center">
+                                <div class="round">
+                                    <i class="fa-solid fa-money-bill-1-wave"></i>
+                                </div>
+                            </div>
+                            <div class="col-9 align-self-center text-center">
+                                <div class="m-l-10">
+                                    <h5 class="mt-0 round-inner">{{cod.total}}</h5>
+                                    <p class="mb-0 text-muted">COD</p>
+                                </div>
+                            </div>
+                            {{!-- <div class="col-3 align-self-end align-self-center">
+                                <h6 class="m-0 float-right text-center text-danger"> <i class="mdi mdi-arrow-down"></i>
+                                    <span>5.26%</span></h6>
+                            </div> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        <div class="d-flex flex-row">
+                            <div class="col-3 align-self-center">
+                                <div class="round">
+                                    <i class="fab fa-paypal"></i>
+                                </div>
+                            </div>
+                            <div class="col-9 text-center align-self-center">
+                                <div class="m-l-10 ">
+                                    <h5 class="mt-0 round-inner">{{paypal.total}}</h5>
+                                    <p class="mb-0 text-muted">Paypal</p>
+                                </div>
+                            </div>
+                            {{!-- <div class="col-3 align-self-end align-self-center">
+                                <h6 class="m-0 float-right text-center text-success"> <i class="mdi mdi-arrow-up"></i>
+                                    <span>8.68%</span></h6>
+                            </div> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        <div class="d-flex flex-row">
+                            <div class="col-3 align-self-center">
+                                <div class="round">
+                                    <i class="mdi mdi-cards"></i>
+                                </div>
+                            </div>
+                            <div class="col-9 text-center align-self-center">
+                                <div class="m-l-10 ">
+                                    <h5 class="mt-0 round-inner">{{razorpay.total}}</h5>
+                                    <p class="mb-0 text-muted">Razorpay</p>
+                                </div>
+                            </div>
+                            {{!-- <div class="col-3 align-self-end align-self-center">
+                                <h6 class="m-0 float-right text-center text-success"> <i class="mdi mdi-arrow-up"></i>
+                                    <span>8.68%</span></h6>
+                            </div> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        <div class="d-flex flex-row">
+                            <div class="col-3 align-self-center">
+                                <div class="round">
+                                    <i class="mdi mdi-cash-usd"></i>
+                                </div>
+                            </div>
+                            <div class="col-9 align-self-center text-center">
+                                <div class="m-l-10">
+                                    <h5 class="mt-0 round-inner">{{totalsale.total }}</h5>
+                                    <p class="mb-0 text-muted">Total Sales</p>
+                                </div>
+                            </div>
+                            {{!-- <div class="col-3 align-self-end align-self-center">
+                                <h6 class="m-0 float-right text-center text-success"> <i class="mdi mdi-arrow-up"></i>
+                                    <span>2.35%</span></h6>
+                            </div> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+        </div>
+        <div class="row">
+            <div class="col-md-12  col-lg-12 col-xl-12">
+                <div class="bg-white row">
+                <p id="cod" style=" display:none">{{cod}}</p>
+                <p id="razorpay" style=" display:none">{{razorpay}}</p>
+                <p id="paypal" style=" display:none">{{paypal}}</p>
+          
+    <div class="col-md-5 pt-4 "> <canvas id="myChart" ></canvas></div>
+    <div class="col-md-7 pt-4"><canvas id="myCharttwo" class=""></canvas></div>
+</div>
+                
+            </div>
+            {{!-- <div class="col-md-12 col-lg-12 col-xl-6">
+                <canvas id="myCharttwo"
+                    style="background-color:#fff;box-shadow:1px 0px 20px rgb(0 0 0 / 5%);padding:15px"></canvas>
+            </div> --}}
+        </div>
+
+
+
+
+         <!-- end row -->
+
+    </div><!-- container -->
+</div>
+
+
+
+
+
+
+
+
+
+
+<script>
+    let myChart = document.getElementById('myChart').getContext('2d');
+    //console.log({{Categorysales}})
+    // Global Options
+    //Chart.defaults.global.defaultFontFamily = 'Lato';
+   // Chart.defaults.global.defaultFontSize = 18;
+   // Chart.defaults.global.defaultFontColor = '#777';
+
+    let massPopChart = new Chart(myChart, {
+      type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+         labels: ["Kid", "Men", "Women"],
+        datasets:[{
+          label:'Population',
+           data: [{{Categorysales.[0].count}},{{Categorysales.[1].count}},{{Categorysales.[2].count}}],
+          //backgroundColor:'green',
+          backgroundColor: [
+                        "#5b6be8",
+                        "#fb6ba8",
+                        "#ec6be8",
+                        "#2b6be8",
+                       
+                    ],
+                    hoverBackgroundColor: [
+                        "#5b6be8",  
+                    ],
+                    hoverBorderColor: "#fff"
+          
+        }]
+      },
+      options:{
+        title:{
+          display:true,
+             text:'Category wise sale',
+          fontSize:15
+        },
+        legend:{
+          display:true,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true
+        }
+      }
+    });
+  </script>
+
+
+<script>
+    let myCharttwo = document.getElementById('myCharttwo').getContext('2d');
+
+    // Global Options
+    //Chart.defaults.global.defaultFontFamily = 'Lato';
+    //Chart.defaults.global.defaultFontSize = 18;
+    //Chart.defaults.global.defaultFontColor = '#777';
+
+    let massPopChartw = new Chart(myCharttwo, {
+      type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+         labels: ["COD", "PAYPAL", "RAZORPAY", "Wallet"],
+        datasets:[{
+          label:'Payment',
+           data: [{{ cod.total }}, {{ paypal.total }},{{ razorpay.total }},{{ wallet.total }}],
+          //backgroundColor:'green',
+          backgroundColor:[
+           "#5b6be8",
+           "#5b6be8",
+           "#5b6be8",
+           "#5b6be8",
+           
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }]
+      },
+      options:{
+        title:{
+          display:true,
+          text:'Payments',
+          fontSize:15
+        },
+       
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true
+        }
+      }
+    });
+  </script>

@@ -1,0 +1,59 @@
+
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area-2 pt-150 pb-50 include-bg" data-background="assets/img/page-title/page-title-1.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">     
+                        <div class="breadcrumb-wrapper-2 text-center">
+                            <h3>login</h3>
+                            {{!-- <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">login</li>
+                                </ol>
+                            </nav> --}}
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb area end -->
+
+        <!-- login area start -->
+        <section class="login-area  pb-100">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-8 offset-lg-2">
+                        <div class="basic-login">
+                           <h3 class="text-center mb-60">Login Here</h3>
+                           <form action="/login" method="post">
+                           {{#if logerr}}
+                           <p class="text-danger">{{logerr}}</p>
+                           {{/if}}
+                            {{#if activeErr}}
+                           <p class="text-danger">This Account has been blocked</p>
+                           {{/if}}
+                           
+                              <label for="name">Email Address <span>*</span></label>
+                              <input id="name" type="text" name="Email" placeholder="Email address..." />
+                              <label for="pass">Password <span>*</span></label>
+                              <input id="pass" name="Password" type="password" placeholder="Enter password..." />
+                              <div class="login-action mb-20 fix">
+                                    {{!-- <span class="log-rem f-left">
+                                       <input id="remember" type="checkbox" />
+                                       <label for="remember">Remember me!</label>
+                                    </span> --}}
+                                    <span class="forgot-login f-right">
+                                       <a href="/forgotPassword">Lost your password?</a>
+                                    </span>
+                              </div>
+                              <button type="submit" class="s-btn s-btn-4 w-100">Login Now</button>
+                              <div class="or-divide"><span>or</span></div>
+                              <a href="/register" class="s-btn s-btn-2 w-100">Register Now</a>
+                           </form>
+                        </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+        <!-- login area end -->

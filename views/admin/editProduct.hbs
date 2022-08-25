@@ -1,0 +1,162 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Edit Product</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-30">
+            <div class="card-body">
+                <form action="/admin/editProduct/{{product._id}}" method="post" enctype="multipart/form-data">
+                {{!-- {{#if productAdded}}
+                <p class="text-success">Product Added succesfully</p>
+                {{/if}} --}}
+                    <div class="row">
+                        <div class="form-group  col-md-6">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Product Name</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" placeholder="Enter product name" value="{{product.Name}}" type="text" name="Name"
+                                    id="example-text-input">
+                            </div>
+                        </div>
+                        <div class="form-group   col-md-6">
+                            <label class="col-sm-12 col-form-label">Category</label>
+                            <div class="col-sm-12">
+                                <select name="category" class="form-control">
+                                    <option selected hidden>{{product.category}}</option>
+                                    {{#each category}}
+                                    <option>{{this.Categoryname}}</option>
+                                    {{/each}}
+                                   
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group   col-md-6">
+                            <label class="col-sm-12 col-form-label">Sub Category</label>
+                            <div class="col-sm-12">
+                                <select name="subcategory" class="form-control">
+                                    <option selected hidden>{{product.subcategory}}</option>
+                                    {{#each subcategory}}
+                                    <option>{{this.subcategory}}</option>
+                                    {{/each}}
+                                   
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group   col-md-6">
+                            <label class="col-sm-12 col-form-label">Brand</label>
+                            <div class="col-sm-12">
+                                <select name="brand"  class="form-control">
+                                    <option selected hidden>{{product.brand}}</option>
+                                    {{#each brand}}
+                                    <option>{{this.brand}}</option>
+                                    {{/each}}
+                                    
+                                </select>
+                            </div>
+                        </div>
+                     {{!-- <div class="form-group   col-md-6">
+                            <label class="col-sm-12 col-form-label">Size</label>
+                            <div class="col-sm-12">
+                                <select name="size"  class="form-control">
+                                    <option selected hidden>{{product.size}}</option>
+                                    {{#each size}}
+                                    <option>{{this.size}}</option>
+                                    {{/each}}
+                                    
+                                   
+                                </select>
+                            </div>
+                        </div> --}}
+                        <div class="form-group  col-md-6">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Size</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" value="{{product.size}}" name="size" placeholder="size" type="text"
+                                    id="example-text-input">
+                            </div>
+                        </div>
+                        {{!-- <div class="form-group   col-md-6">
+                            <label class="col-sm-12 col-form-label">Color</label>
+                            <div class="col-sm-12">
+                                <select name="color"  class="form-control">
+                                    <option selected hidden>{{product.color}}</option>
+                                    {{#each color}}
+                                    <option>{{this.color}}</option>
+                                    {{/each}}
+                                    
+                                   
+                                </select>
+                            </div>
+                        </div> --}}
+
+                        <div class="form-group  col-md-6">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Color</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" value="{{product.color}}" name="color" placeholder="color" type="text" 
+                                    id="example-text-input">
+                            </div>
+                        </div>
+
+                         <div class="form-group  col-md-6">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Stock</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" value="{{product.stock}}" name="stock" placeholder="Enter product name" type="text" name="Name"
+                                    id="example-text-input">
+                            </div>
+                        </div>
+                         <div class="form-group  col-md-6">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Price</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" value="{{product.price}}" name="price" placeholder="Enter product name" type="text" name="Name"
+                                    id="example-text-input">
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Discounted Price</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" value="{{product.discounted_price}}" name="discounted_price" placeholder="Enter product name" type="text" name="Name"
+                                    id="example-text-input">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Description</label>
+                            <div class="col-sm-12">
+                                    <textarea class="form-control"  name="description" rows="4" cols="50">{{product.description}}
+                                    </textarea>
+
+                            </div>
+                        </div>
+                         <div class="form-group col-md-12">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">File Upload</label>
+                            <div class="col-sm-12">
+                                <div class="row">
+                            {{#each product.image}}
+                            <div class="col-md-3">
+                            <img src="/images/product/{{this}}" alt="product" class="w-100">
+                            </div>
+                            {{/each}}
+                            </div>
+                            <input class="form-control h-100 mt-5"  multiple placeholder="Enter product name" type="file" name="image"
+                                    id="example-text-input">
+                            </div>
+                        </div>
+                        
+                            <div class="text-right mt-3 col-md-12" >
+                                <button type="submit" class="btn btn-light waves-effect mr-4">Cancel</button>
+                                <button type="submit"
+                                    class="btn btn-success waves-effect waves-light">Save</button>
+
+                            </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div> <!-- end col -->
+</div>
+
+<script defer src="https://cdn.crop.guide/loader/l.js?c=XNRVNN"></script>
+

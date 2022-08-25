@@ -1,0 +1,434 @@
+<main>
+    <!-- breadcrumb area start -->
+    <div class="breadcrumb-area-2 box-plr-45 gray-bg-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xxl-12">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb area end -->
+
+    <!-- product details area start -->
+    <section class="product__details-area pb-45 box-plr-45 gray-bg-4" style="padding-top:180px; ">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <div class="product__details-nav-wrapper d-sm-flex align-items-center">
+                        <div class="product__details-nav mr-120">
+                            <ul class="nav nav-tabs flex-sm-column" id="productDetailsNav" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pro-nav-1-tab" data-bs-toggle="tab"
+                                        data-bs-target="#pro-nav-1" type="button" role="tab" aria-controls="pro-nav-1"
+                                        aria-selected="true">
+                                        <img src="/images/product/{{product.image.[0]}}" style="width:90px" alt="">
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pro-nav-2-tab" data-bs-toggle="tab"
+                                        data-bs-target="#pro-nav-2" type="button" role="tab" aria-controls="pro-nav-2"
+                                        aria-selected="false">
+                                        <img src="/images/product/{{productDetail.image.[1]}}" style="width:90px"
+                                            alt="">
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pro-nav-3-tab" data-bs-toggle="tab"
+                                        data-bs-target="#pro-nav-3" type="button" role="tab" aria-controls="pro-nav-3"
+                                        aria-selected="false">
+                                        <img src="/images/product/{{productDetail.image.[2]}}" style="width:90px"
+                                            alt="">
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pro-nav-4-tab" data-bs-toggle="tab"
+                                        data-bs-target="#pro-nav-4" type="button" role="tab" aria-controls="pro-nav-4"
+                                        aria-selected="false">
+                                        <img src="/images/product/{{productDetail.image.[3]}}" style="width:90px"
+                                            alt="">
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product__details-thumb">
+                            <div class="tab-content" id="productDetailsTabContent">
+                                <div class="tab-pane fade show active" id="pro-nav-1" role="tabpanel"
+                                    aria-labelledby="pro-nav-1-tab">
+                                    <div class="product-nav-thumb-wrapper zoom-image">
+                                        <a href="/images/product/{{productDetail.image.[0]}}"
+                                            class="product-img-zoom popup-image">
+                                            <a href="/images/product/{{productDetail.image.[0]}}"
+                                                class="product-img-zoom popup-image">
+                                                <i class="fal fa-compress"></i>
+                                            </a>
+                                            <img src="/images/product/{{productDetail.image.[0]}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pro-nav-2" role="tabpanel"
+                                    aria-labelledby="pro-nav-2-tab">
+                                    <div class="product-nav-thumb-wrapper zoom-image">
+                                        <a href="/images/product/{{productDetail.image.[1]}}"
+                                            class="product-img-zoom popup-image">
+                                            <a href="/images/product/{{productDetail.image.[1]}}"
+                                                class="product-img-zoom popup-image">
+                                                <i class="fal fa-compress"></i>
+                                            </a>
+                                            <img src="/images/product/{{productDetail.image.[1]}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pro-nav-3" role="tabpanel"
+                                    aria-labelledby="pro-nav-3-tab">
+                                    <div class="product-nav-thumb-wrapper zoom-image">
+                                        <a href="/images/product/{{productDetail.image.[2]}}"
+                                            class="product-img-zoom popup-image">
+                                            <a href="/images/product/{{productDetail.image.[2]}}"
+                                                class="product-img-zoom popup-image">
+                                                <i class="fal fa-compress"></i>
+                                            </a>
+                                            <img src="/images/product/{{productDetail.image.[2]}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pro-nav-4" role="tabpanel"
+                                    aria-labelledby="pro-nav-4-tab">
+                                    <div class="product-nav-thumb-wrapper zoom-image">
+                                        <a href="/images/product/{{productDetail.image.[3]}}"
+                                            class="product-img-zoom popup-image">
+                                            <a href="/images/product/{{productDetail.image.[3]}}"
+                                                class="product-img-zoom popup-image">
+                                                <i class="fal fa-compress"></i>
+                                            </a>
+                                            <img src="/images/product/{{productDetail.image.[3]}}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-xl-6 col-lg-6">
+                    <div class="product__details-content pt-60">
+
+                        <h1 class="product__details-title">
+                            <a href="product-details.html">{{productDetail.brand}}</a>
+                        </h1>
+                        <h3 class="product__details-title">
+                            <a href="product-details.html">{{productDetail.Name}}</a>
+                        </h3>
+
+                        {{#if this.offer}}
+                         <div class="product__details-price">
+                            <span class="text-danger fw-bold fs-5"><span>Rs </span>
+                                {{productDetail.discounted_price}}</span>
+                            <del class="ms-4 fs-5"><span class="fw-bold fs-5">Rs </span> {{productDetail.price}}</del>
+                            {{!-- <span class="price">£1.296.00</span> --}}
+                            {{!-- <span class="price">RS <span class="text-danger fw-bold fs-5"> {{productDetail.price}}
+                                </span></span> --}}
+                        </div>
+                        {{else}}
+                        <div class="product__details-price">
+                            <span class="text-danger fw-bold fs-5"><span>Rs </span>
+                                {{productDetail.discounted_price}}</span>
+                            {{!-- <del class="ms-4 fs-5"><span class="fw-bold fs-5">Rs </span> {{productDetail.price}}</del> --}}
+                            {{!-- <span class="price">£1.296.00</span> --}}
+                            {{!-- <span class="price">RS <span class="text-danger fw-bold fs-5"> {{productDetail.price}}
+                                </span></span> --}}
+                        </div>
+                        {{/if}}
+
+
+                       
+
+                        {{!-- <div class="product__details-rating d-flex align-items-center mb-15">
+                            <ul class="mr-10">
+                                <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                <li><a href="#"><i class="fal fa-star"></i></a></li>
+                            </ul>
+                            <div class="product__details-customer">
+                                <span><a href="#">04 Customer Reviews</a></span>
+                            </div>
+                        </div> --}}
+
+                        <p class="product-des">{{productDetail.description}}</p>
+
+
+                        {{!-- <div class="product__details-color d-sm-flex align-items-center mb-25">
+                            <span>Color:</span>
+                            <ul>
+                                <li><a href="#" class="black"></a></li>
+                                <li><a href="#" class="active brown"></a></li>
+                                <li><a href="#" class="blue"></a></li>
+                                <li><a href="#" class="red"></a></li>
+                                <li><a href="#" class="white"></a></li>
+                            </ul>
+                        </div> --}}
+                        {{!-- <div class="product__details-size d-sm-flex align-items-center mb-30">
+                            <span>Size: </span>
+                            <ul class="mr-30">
+                                <li>
+                                    <a href="#" class="unavailable">5</a>
+                                </li>
+                                <li>
+                                    <a href="#">6</a>
+                                </li>
+                                <li>
+                                    <a href="#">7</a>
+                                </li>
+                                <li>
+                                    <a href="#">8</a>
+                                </li>
+                                <li>
+                                    <a href="#">9</a>
+                                </li>
+                                <li>
+                                    <a href="#">10</a>
+                                </li> --}}
+                                {{!-- {{#each size}}
+                                <li>
+                                    <a href="#">{{size}}</a>
+                                </li>
+                                {{/each}} --}}
+                            {{!-- </ul>
+                            <button type="button" class="product-size-guide-btn float-sm-end" data-bs-toggle="modal"
+                                data-bs-target="#productSizeModal">Size Guide</button>
+                        </div> --}}
+                        <div class="product__details-action">
+                            <form action="#">
+                                <div class="product__details-quantity d-sm-flex align-items-center">
+                                    {{!-- <div class="product-quantity mb-20 mr-15">
+                                        <div class="cart-plus-minus"><input type="text" value="1" /></div>
+                                    </div> --}}
+                                    <div class="product-add-cart mb-20">
+                                        <button onclick="addToCart('{{productDetail._id}}')"
+                                            class="w-100 cart-btn cart-btn-1 p-abs px-3 py-2"
+                                            style="position:inherit;">Add to carts</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        {{!-- <div class="product__details-compare">
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fal fa-heart"></i>Add to Wishlist</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fal fa-layer-group"></i>Add to Compare</a>
+                                </li>
+                            </ul>
+                        </div> --}}
+                        <div class="product__details-meta mb-25">
+                            <ul>
+                                <li>
+                                    <div class="product-availibility">
+                                        <span>Availability</span>
+                                        <p>
+                                            {{#if productDetail.stock}}
+                                            <span>In Stock</span>
+                                            {{else}}
+                                            <span>Stockout</span>
+                                            {{/if}}
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-sku">
+                                        <span>Product ID:</span>
+                                        <p>
+                                            <span>{{productDetail._id}}</span>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-sku">
+                                        <span>Categories:</span>
+                                        <p>
+                                            {{productDetail.category}}
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-sku">
+                                        <span style="vertical-align:top;">Description:</span>
+                                        <p>
+                                            {{productDetail.description}}
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product__details-social d-sm-flex align-items-center">
+                            <span>Share: </span>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- top selling product area start -->
+    <div class="top-selling-product pt-95 pb-65">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-12">
+                    <div class="product-details-section-title text-center mb-30">
+                        <h4>YOU MAY ALSO LIKE</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <dv class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade  show active" id="tab1">
+                                <div class="row pb-20">
+                                    {{#each product}}
+                                    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                        <div class="single-product mb-15 wow fadeInUp" data-wow-delay=".6s">
+                                            <div class="product-thumb">
+                                                <a href="/product_detail/{{this._id}}">
+                                                    <img src="/images/product/{{this.image.[0]}}" alt="#">
+                                                    <img src="/images/product/{{this.image.[1]}}" alt="#">
+                                                </a>
+                                                <div class="cart-btn cart-btn-1 p-abs">
+                                                    {{!-- <a href="/addToCart/{{this._id}}">Add to cart</a> --}}
+                                                    <button onclick="addToCart('{{this._id}}')"
+                                                        class="w-100 cart-btn cart-btn-1 p-abs">Add to carts</button>
+                                                </div>
+                                                {{!-- <div class="product-action product-action-1 p-abs">
+                                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal"
+                                                        data-bs-target="#productModal">
+                                                        <i class="fal fa-eye"></i>
+                                                        <i class="fal fa-eye"></i>
+                                                    </a>
+                                                    <a href="#" class="icon-box icon-box-1">
+                                                        <i class="fal fa-heart"></i>
+                                                        <i class="fal fa-heart"></i>
+                                                    </a>
+                                                    <a href="#" class="icon-box icon-box-1">
+                                                        <i class="fal fa-layer-group"></i>
+                                                        <i class="fal fa-layer-group"></i>
+                                                    </a>
+                                                </div> --}}
+                                            </div>
+                                            <div class="product-content">
+                                                <div style="min-height:40px; max-height:40px;">
+                                                <h4 class="pro-title pro-title-1"><a
+                                                        href="/product_detail/{{this._id}}"> {{this.Name}}</a></h4>
+                                                </div>
+                                                <div class="pro-price">
+
+                                                {{#if this.offer}}
+                                <div class="pro-price">
+                                   <span class="text-danger fw-bold"><span>Rs </span> {{this.discounted_price}}</span>
+                                    <del class="ms-4"><span class="fw-bold">Rs </span> {{this.price}}</del>
+                                </div>
+                                {{else}}
+                                 <div class="pro-price">
+                                   <span class="text-danger fw-bold"><span>Rs </span> {{this.discounted_price}}</span>
+                                    {{!-- <del class="ms-4"><span class="fw-bold">Rs </span> {{this.price}}</del> --}}
+                                </div>
+                                {{/if}}  
+                                    
+                                   
+                                                </div>
+                                                {{!-- <div class="rating">
+                                                    <i class="fal fa-star active"></i>
+                                                    <i class="fal fa-star active"></i>
+                                                    <i class="fal fa-star"></i>
+                                                    <i class="fal fa-star"></i>
+                                                    <i class="fal fa-star"></i>
+                                                </div> --}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                            
+                        </div>
+            </div>
+        </div>
+    </div>
+    <!-- top selling product area end -->
+
+
+
+</main>
+
+
+<script>
+
+    jQuery(document).ready(function ($) {
+
+        $('.zoom-image img').click(function (event) {
+            var ix = $(this).offset().left;
+            var iy = $(this).offset().top;
+            console.log(ix + '-' + iy);
+
+            var mx = event.pageX;
+            var my = event.pageY;
+            console.log(mx + '-' + my);
+        })
+
+        $('.zoom-image img').hover(function () {
+
+            var img = $(this).attr('src');
+
+            $(this).after("<div class='hover-image' style='background-image: url(" + img + "); background-size: 1200px;'></div>");
+
+            $(this).mousemove(function (event) {
+
+                // Mouse Position
+                var mx = event.pageX;
+                var my = event.pageY;
+
+                // Image Position
+                var ix = $(this).offset().left;
+                var iy = $(this).offset().top;
+
+                // Mouse Position Relavtive to Image
+                var x = mx - (ix);
+                var y = my - (iy);
+
+                // Image Height and Width
+                var w = $(this).width();
+                var h = $(this).height();
+
+                // Mouse Position Relative to Image, in %
+                var xp = (-x / w) * -100;
+                var yp = (-y / h) * -100;
+
+                $(this).parent().find('.hover-image').attr('style',
+
+                    "background-image: url(" + img + "); background-size: 1200px; background-repeat: no-repeat; background-position: " + xp + "% " + yp + "%; top: " + y + "px; left: " + x + "px;");
+
+            });
+
+        }, function () {
+
+            $(this).parent().find('.hover-image').remove();
+
+        });
+
+    });
+
+</script>

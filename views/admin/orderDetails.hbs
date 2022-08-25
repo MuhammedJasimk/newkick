@@ -1,0 +1,82 @@
+<div class="container-fluid">
+    <div class="page-title-box">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <h4 class="page-title">Order Details</h4>
+            </div>
+
+        </div> <!-- end row -->
+    </div>
+    <!-- end page-title -->
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card m-b-30">
+                <div class="card-body">
+            <h4 class="mt-0 header-title mb-3">Delivery Details</h4>
+
+                    <table class="table dataTable no-footer"
+                        style="border-collapse: collapse; border-spacing: 0; width: 100%; font-size:12px;">
+                        <tbody>
+                            <tr>
+                                <td class="border-0">{{Orders.[0].address}}</td>
+                            </tr>
+                            <tr>
+                                <td class="border-0">{{Orders.[0].street}}</td>
+                            </tr>
+                            <tr>
+                                <td class="border-0"><span>Pin: </span>{{Orders.[0].pinCode}}, {{Orders.[0].country}}</td>
+                            </tr>
+                            <tr>
+                                <td class="border-0">{{Orders.[0].email}}</td>
+                            </tr>
+                            <tr>
+                                <td class="border-0">{{Orders.[0].mobile}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+        <div class="card m-b-30">
+                <div class="card-body">
+            <h4 class="mt-0 header-title mb-3">Product Details</h4>
+                    <table  class="table dataTable no-footer"
+                        style="border-collapse: collapse; border-spacing: 0; width: 100%; font-size:12px;">
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Discounted Price</th>
+                            <th>Coupon</th>
+                            <th>Qty</th>
+                            <th>Total</th>
+                        </tr>
+                        
+                        <tbody>
+                            {{#each Orders}}
+                            <tr>
+                                <td>
+                                    <img src="/images/product/{{this.image.[0]}}" class="w-100" height="50px"
+                                style="object-fit:cover;" />
+                                </td>
+                                <td>{{this.Name}}</td>
+                                <td>{{this.price}}</td>
+                                <td>{{this.discounted_price}}</td>
+                                {{#if this.coupon}}
+                                <td>{{this.coupon}}</td>
+                                {{else}}
+                                <td>0</td>
+                                {{/if}}
+                                <td>{{this.quantity}}</td>
+                                <td>{{this.final}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+ <!-- breadcrumb area start -->
+        <div class="breadcrumb-area-2 pt-240  include-bg" data-background="assets/img/page-title/page-title-1.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">     
+                        <div class="breadcrumb-wrapper-2 text-center">
+                            <h3>register</h3>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">register</li>
+                                </ol>
+                            </nav>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb area end -->
+
+        <!-- login area start -->
+        <section class="login-area pt-100 pb-100">
+            <div class="container">
+                  <div class="row">
+                     <div class="col-lg-8 offset-lg-2">
+                        <div class="basic-login">
+                              <h3 class="text-center mb-60">Signup From Here</h3>
+                              <form action="userSignup" method="post">
+                                {{#if signUperr}}
+                                 <p class="text-danger">{{signUperr}}</p>
+                                 {{/if}}
+                                 <label for="name">Username <span>*</span></label>
+                                 <input id="username" type="text" name="Username" onkeyup="validatename()" placeholder="Enter Username" />
+                                 <span id="username-err" class=" text-danger"></span>
+                                 <label for="email-id">Email Address <span>*</span></label>
+                                 <input id="emailid" type="email" onkeyup="validateEmail()" name="Email" placeholder="Email address..." />
+                                 <span id="emailid-err" class=" text-danger"></span>
+                                  <label for="phone-id">Mobile Number<span>*</span></label>
+                                 <input id="mobilenumber"  type="text" onkeyup="validatemobile()" name="mobileNumber" placeholder="Mobile Number" />
+                                 <span id="mobilenumber-err" class=" text-danger"></span>
+                                 <label for="pass">Password <span>*</span></label>
+                                 <input id="password" type="password" name="Password" onkeyup="validatepassword()" placeholder="Enter password..." />
+                                  <span id="password-err" class=" text-danger"></span>
+                                  {{!-- <input type="text" name="active" value="true" hidden> --}}
+                                 <div class="mt-10"></div>
+                                 <button class="s-btn s-btn-4 w-100" onclick="return validateForm()">Register Now</button>
+                                 
+                                 <div class="or-divide"><span>or</span></div>
+                                 <a href="/login" class="s-btn s-btn-2 w-100">login Now</a>
+                              </form>
+                        </div>
+                     </div>
+                  </div>
+            </div>
+         </section>
+        <!-- login area end -->

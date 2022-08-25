@@ -1,0 +1,50 @@
+
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area-2 pt-150 pb-50 include-bg" data-background="assets/img/page-title/page-title-1.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">     
+                        <div class="breadcrumb-wrapper-2 text-center">
+                            <h3>Forgot Password</h3>
+                            {{!-- <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">login</li>
+                                </ol>
+                            </nav> --}}
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb area end -->
+
+        <!-- login area start -->
+        <section class="login-area  pb-100">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-8 offset-lg-2">
+                        <div class="basic-login">
+                           <h3 class="text-center mb-60">Forgot Your Password</h3>
+                           <form action="/newPw" method="post">
+                           {{#if err}}
+                           <p class="text-danger">{{err}}</p>
+                           {{/if}}
+                            {{!--{{#if activeErr}}
+                           <p class="text-danger">This Account has been blocked</p>
+                           {{/if}} --}}
+                           
+                              <label for="name">Enter New Password <span>*</span></label>
+                              <input id="name" type="text" name="newpassword" placeholder="Email address..." />
+                              <div class="login-action mb-20 fix">
+                              </div>
+                              <button type="submit" class="s-btn s-btn-4 w-100">Submit</button>
+                              {{!-- <div class="or-divide"><span>or</span></div> --}}
+                              {{!-- <a href="/register" class="s-btn s-btn-2 w-100">Register Now</a> --}}
+                           </form>
+                        </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+        <!-- login area end -->

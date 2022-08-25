@@ -1,0 +1,85 @@
+<div class="card mt-150 container mb-50">
+    <div class="card-body">
+        <div class="container mb-5 mt-3">
+            {{!-- <div class="row d-flex align-items-baseline">
+                <div class="col-xl-9">
+                    <p style="color: #7e8d9f;font-size: 20px;">Invoice &gt;&gt; <strong>ID: #123-123</strong></p>
+                </div>
+            </div> --}}
+            <div class="container">
+                {{!-- <div class="col-md-12">
+                    <div class="text-center">
+                        <i class="far fa-building fa-4x ms-0" style="color:#8f8061 ;"></i>
+                        <p class="pt-2">Company Name</p>
+                    </div>
+                </div> --}}
+                <div class="row">
+                    <div class="col-xl-8">
+                        <ul class="list-unstyled">
+                            <li class="text-muted">To:</li>
+                            <li class="text-muted">{{proData.address}}</li>
+                            <li class="text-muted">{{proData.street}}</li>
+                            <li class="text-muted"><span>Pin: </span>{{proData.pinCode}} , {{proData.country}}</li>
+                            <li class="text-muted">{{proData.mobile}}</li>
+                            <li class="text-muted">{{proData.email}}</li>
+
+                        </ul>
+                    </div>
+                    <div class="col-xl-4">
+                        <p class="text-muted">Invoice</p>
+                        <ul class="list-unstyled">
+                            <li class="text-muted"><span class="fw-bold">Date: </span>{{proData.date}}</li>
+                            <li class="text-muted"> <span class="me-1 fw-bold">Payment Method:</span><span
+                                    class="badge bg-warning text-black fw-bold">
+                                    {{proData.paymentmethod}}</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row my-2 mt-4 mx-1 justify-content-center">
+                    <div class="col-md-2 mb-4 mb-md-0">
+                        <div class="bg-image ripple rounded-5 mb-4 overflow-hidden d-block " data-ripple-color="light">
+                            <img src="/images/product/{{proData.image.[1]}}" class="w-100" height="100px"
+                                style="object-fit:cover;" />
+                            <a href="#!">
+                                <div class="hover-overlay">
+                                    <div class="mask" style="background-color: hsla(0, 0%, 98.4%, 0.2)"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-7 mb-4 mb-md-0">
+                        <p class="fw-bold">{{proData.Name}}</p>
+                        <p class="fw-bold"><span>Qty : </span>{{proData.qty}}</p>
+                        {{!-- <p class="fw-bold"><span>Price : </span>{{proData.price}}</p> --}}
+                        <h5><p class="mb-0"> Actual Price <span> {{proData.price}}</span></p></h5>
+                        <h5><p> Discounted Price <span> {{proData.sellingP}}</span></p></h5>
+                    </div>
+                    <div class="col-md-3 mb-4 mb-md-0">
+                
+
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-xl-8">
+
+                    </div>
+                    <div class="col-xl-3">
+                        <ul class="list-unstyled">
+                            <li class="text-muted ms-3"><span
+                                    class="text-black me-4">SubTotal</span>{{proData.discounted_rate}}</li>
+                             <li class="text-muted ms-3 mt-2"><span
+                                    class="text-black me-4">Tax</span>{{proData.tax}}</li>
+                             <li class="text-muted ms-3 mt-2"><span
+                                    class="text-black me-4">Shipping</span>Free</li>
+                            <li class="text-muted ms-3 mt-2"><span
+                                    class="text-black me-4">Coupon Offer</span>{{proData.discounted}}</li>
+                            <li class="text-muted ms-3 mt-2 fw-bold"><span class="text-black me-4 ">Total
+                                    Amount</span>{{proData.discounted_price}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

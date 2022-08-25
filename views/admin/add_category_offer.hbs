@@ -1,0 +1,117 @@
+<div class="container-fluid">
+    <div class="page-title-box">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <h4 class="page-title">All Products</h4>
+            </div>
+
+        </div> <!-- end row -->
+    </div>
+    <!-- end page-title -->
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card m-b-30">
+                <div class="card-body">
+
+                    <table id="datatable" class="table dataTable no-footer"
+                        style="border-collapse: collapse; border-spacing: 0;font-size:14px; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th style="width:10%;"></th>
+                                <th >Category</th>
+                                <th>Offer Type</th>
+                                <th>Offer</th>
+                                <th style="width:12%;">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each category}}
+                            <tr>
+                                <td>
+                                    <img class="product_listing" src="/images/categories/{{this.image.[0]}}" alt="">
+                                </td>
+                                <td>{{this.Categoryname}}</td>
+                                {{#if this.offer}}
+                                <td >{{this.OfferName}}</td>
+                                <td >{{this.OffAmount}} <span>%</span></td>
+                                {{else}}
+                                <td align="center" colspan="2">No Offer</td>
+                                {{/if}}
+                                
+                                <td>
+                                   <div class="btn-group m-b-10">
+                                                <button type="button" class="btn btn-info">Offer</button>
+                                                <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    {{#each ../offer}}
+                                                    <button class="dropdown-item" onclick="addOffer('{{../this._id}}','{{this.discountRate}}','{{this.Offername}}')">{{this.Offername}}</button>
+                                                    {{/each}}
+                                                    <div class="dropdown-divider"></div>
+                                                    <button class="dropdown-item" onclick="cancelOffer('{{this._id}}')">Cancel Offer</button>
+
+                                                </div>
+                                            </div>
+                                </td>
+                            </tr>
+                            {{/each}}
+                           
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+
+
+
+</div>
+<!-- container-fluid -->
+
+</div>
+<!-- content -->
+
+
+</div>
+
+<script>
+    function addOffer(id,discount,name){
+        console.log(id,name)
+       $.ajax({
+        url: '/admin/addOffer',
+        data: {
+            catId:id,
+            offer: discount,
+            OfferName:name,
+        },
+        method: 'post',
+        success: (response)=>{
+        console.log("got response")
+        console.log(response)
+        alert("Updated Succesfully")
+        location.reload()
+       }
+    })
+    }
+
+
+     function cancelOffer(id){
+        console.log(id)
+        $.ajax({
+        url: '/admin/CancelOffer',
+        data: {
+        proId:id,
+        },
+        method: 'post',
+       success: (response)=>{
+        alert("Updated Succesfully")
+        location.reload()
+       }
+    }) 
+    }
+</script>

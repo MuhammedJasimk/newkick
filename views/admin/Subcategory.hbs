@@ -1,0 +1,203 @@
+
+<div class="container-fluid">
+    <div class="page-title-box">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <h4 class="page-title">All Sub-Categories</h4>
+            </div>
+
+        </div> <!-- end row -->
+    </div>
+    <!-- end page-title -->
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card m-b-30">
+                <div class="card-body">
+
+                    <table id="datatable" class="table dataTable no-footer"
+                        style="border-collapse: collapse; border-spacing: 0;font-size:14px; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th >Category Id</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each category}}
+                            <tr>
+                                <td>{{this._id}}</td>
+                                <td>{{this.SubCategoryname}}</td>
+                                <td>{{this.status}}</td>
+                                <td>
+                                    {{!-- <a href="" class="text-dark"><span  class="mdi mdi-grease-pencil mr-3" style="font-size:20px;"></span></a>
+                                    <a href="" class="text-danger"><span  class="mdi mdi-delete-forever " style="font-size:20px;"></span></a> --}}
+                                {{!-- <button type="submit" class="btn w-100 btn-info waves-effect waves-light">Edit</button> --}}
+                                <a type="submit " class="btn w-100 btn-info waves-effect waves-light" href="/admin/catEdit/{{this._id}}">Edit</a>
+                                </td>
+                            </tr>
+                            {{/each}}
+                           
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Add a Sub-Category</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-30">
+            <div class="card-body">
+                <form action="/admin/addSubCategory" method="post">
+                 {{!-- {{#if category}}
+                    <p class="text-success">Category Added</p>
+                    {{/if}} --}}
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Sub Category Name</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" placeholder="Enter Username" type="text" name="SubCategoryname">
+                                {{!-- <span id="username-err" class=" text-danger"></span> --}}
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6">
+                            <label class="col-sm-12 col-form-label">Status</label>
+                            <div class="col-sm-12">
+                                <select name="status" class="form-control">
+                                    <option>Select</option>
+                                    <option>Active</option>
+                                    <option>Deactive</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="text-right mt-3 col-md-12">
+                            <button type="submit" class="btn btn-light waves-effect mr-4">Cancel</button>
+                            <button type="submit" class="btn btn-success waves-effect waves-light">Save</button>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    {{!-- <div class="col-12">
+         <div class="card m-b-30">
+            <div class="card-body">
+                <form action="/admin/addcolor" method="post">  --}}
+                 {{!-- {{#if category}}
+                    <p class="text-success">Category Added</p>
+                    {{/if}} --}}
+                     {{!-- <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Color</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" placeholder="Enter Username" type="text" name="color"> --}}
+                                {{!-- <span id="username-err" class=" text-danger"></span> --}}
+                            {{!-- </div>
+                        </div> --}}
+                       
+
+                        {{!-- <div class="col-md-6">
+                            <div>
+                            <label> &nbsp;</label>
+
+                            </div>
+                            <button type="submit" class="btn btn-light waves-effect mr-4">Cancel</button>
+                            <button type="submit" class="btn btn-success waves-effect waves-light">Save</button>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div> 
+        </div> --}}
+        <div class="col-12">
+        <div class="card m-b-30">
+            <div class="card-body">
+                <form action="/admin/addbrand" method="post">
+                 {{!-- {{#if category}}
+                    <p class="text-success">Category Added</p>
+                    {{/if}} --}}
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Brand Name</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" placeholder="Enter Username" type="text" name="brand">
+                                {{!-- <span id="username-err" class=" text-danger"></span> --}}
+                            </div>
+                        </div>
+                       
+
+                        <div class="col-md-6">
+                            <div>
+                            <label> &nbsp;</label>
+
+                            </div>
+                            <button type="submit" class="btn btn-light waves-effect mr-4">Cancel</button>
+                            <button type="submit" class="btn btn-success waves-effect waves-light">Save</button>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            </div>
+            </div>
+        {{!-- <div class="col-12">
+        <div class="card m-b-30">
+            <div class="card-body">
+                <form action="/admin/addsize" method="post">  --}}
+                 {{!-- {{#if category}}
+                    <p class="text-success">Category Added</p>
+                    {{/if}} --}}
+                    {{!-- <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="example-text-input" class="col-sm-12 col-form-label">Size</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" placeholder="Enter Username" type="text" name="size"> --}}
+                                {{!-- <span id="username-err" class=" text-danger"></span> --}}
+                            {{!-- </div>
+                        </div>
+                       
+
+                        <div class="col-md-6">
+                            <div>
+                            <label> &nbsp;</label>
+
+                            </div>
+                            <button type="submit" class="btn btn-light waves-effect mr-4">Cancel</button>
+                            <button type="submit" class="btn btn-success waves-effect waves-light">Save</button>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div> --}}
+        </div> 
+
+</div> <!-- end col -->
+</div>

@@ -1,0 +1,57 @@
+<section>
+    <section class="login-area pt-150 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="basic-login">
+                        <h3 class="text-center mb-60">Update Address</h3>
+                        <form action="/editAddress/{{addressDetail._id}}" method="post">
+
+                           <input type="text" name="street" value="{{addressDetail.addressDetail.address}}" id="street"
+                                onkeyup="checkAddress()" placeholder="Street address" />
+                            <p class="text-danger" id="streetErr"></p>
+
+                            
+                            <input type="text" name="address" value="{{addressDetail.addressDetail.street}}"
+                                id="address" onkeyup="checkAddresstwo()"
+                                placeholder="Apartment, suite, unit etc. (optional)" />
+                            <p class="text-danger" id="addressErr"></p>
+
+
+                            
+                            <input type="text" id="country" onkeyup="country()"
+                                value="{{addressDetail.addressDetail.country}}" name="country" placeholder="Country" />
+                            <p class="text-danger" id="countryErr"></p>
+
+
+                            
+                            <input type="text" id="pin" onkeyup="checkpin()" value="{{addressDetail.addressDetail.pinCode}}"
+                                name="pin" placeholder="Postcode / Zip" />
+                            <p class="text-danger" id="pinErr"></p>
+
+
+                            <input type="email" id="emailid" onkeyup="validateEmail()" name="email"
+                                    placeholder="Enter Email" / value="{{addressDetail.addressDetail.email}}">
+                                <p id="emailid-err" class="text-danger"></p>
+                          
+                            <input type="text" id="mobilenumber" onkeyup="validatemobile()" name="phone"
+                                    placeholder="Enter Mobile number" / value="{{addressDetail.addressDetail.mobile}}">
+                                <p id="mobilenumber-err" class="text-danger"></p>
+                        
+                         
+
+
+
+
+                            <div class="mt-10"></div>
+                            <input value="submit" onclick="return validateOrderForm()" type="submit" class="s-btn s-btn-4 w-100"
+                               >
+
+                               <p class="bg-danger" id="formErr "></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

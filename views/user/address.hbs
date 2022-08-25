@@ -1,0 +1,155 @@
+<div class="breadcrumb-area-3 pt-130 ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">     
+                        <div class="breadcrumb-wrapper-2 text-center">
+                            <h3>Address</h3>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+<section class="container mt-50 mb-100">
+
+  <div class="col-md-12 mt-3">
+                                <div class="coupon-accordion">
+                                    <!-- ACCORDION START -->
+                                    <h6 id="showlogin" class="btn  btn-primary"><a href="#"> Add New Address</a> </h6>
+                                    <div id="checkout-login" class="coupon-content">
+                                        <div class="coupon-info">
+                                            <form action="#" id="address-form">
+                                                <div class="checkout-form-list">
+                                                    <label>Street Address <span class="required">*</span></label>
+                                                    <input type="text" name="street" id="street"
+                                                        onkeyup="checkAddress()" placeholder="Street address" />
+                                                    <span id="streetErr" class="text-danger"></span>
+                                                </div>
+                                                <div class="checkout-form-list">
+                                                    <label>Apartment / suite,<span class="required">*</span></label>
+                                                    <input type="text" name="address" id="address"
+                                                        onkeyup="checkAddresstwo()"
+                                                        placeholder="Apartment, suite, unit etc. (optional)" />
+                                                    <span id="addressErr" class="text-danger"></span>
+                                                </div>
+
+
+                                                <div class="checkout-form-list">
+                                                    <label>State / County <span class="required">*</span></label>
+                                                    <input type="text" id="country" onkeyup="country()" name="country"
+                                                        placeholder="" />
+                                                    <span id="countryErr" class="text-danger"></span>
+                                                </div>
+
+                                                <div class="checkout-form-list">
+                                                    <label>Postcode / Zip <span class="required">*</span></label>
+                                                    <input type="text" id="pin" onkeyup="checkpin()" name="pin"
+                                                        placeholder="Postcode / Zip" />
+                                                    <span id="pinErr" class="text-danger"></span>
+                                                </div>
+
+                                                <div class="checkout-form-list">
+                                                    <label>Email Address <span class="required">*</span></label>
+                                                    <input type="email" id="emailid" onkeyup="validateEmail()"
+                                                        name="email" placeholder="" />
+                                                    <span id="emailid-err" class="text-danger"></span>
+                                                </div>
+
+                                                <div class="checkout-form-list">
+                                                    <label>Phone <span class="required">*</span></label>
+                                                    <input type="text" value="+91" id="mobilenumber"
+                                                        onkeyup="validatemobile()" name="phone" placeholder="" />
+                                                    <span id="mobilenumber-err" class="text-danger"></span>
+                                                </div>
+
+                                                <div class="text-end w-100">
+                                                    <button class="btn btn-light ">Cancel</button>
+                                                    <button class="btn btn-success ms-2"
+                                                        onclick="return validateOrderForm()">Save</button>
+                                                </div>
+                                                <input type="text" name="userId" value="{{user._id}}" hidden>
+                                                <p id="formErr" class="text-danger"></p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- ACCORDION END -->
+                                </div>
+                            </div>
+
+
+
+{{#if noData}}
+
+<p class="text-center">No Data Found</p>
+
+{{else}}
+{{#each userAddress}}
+<div class="row shadow mt-3 rounded p-3 align-items-center">
+<div class="col-md-3">
+{{this.addressDetail.email}} ,<br> 
+{{this.addressDetail.mobile}}
+{{!-- <span>Pin :</span>{{this.addressDetail.pinCode}} ,<br>  --}}
+</div>
+
+<div class="col-md-4">
+{{this.addressDetail.address}} ,<br>
+{{this.addressDetail.street}}<br>
+</div>
+<div class="col-md-3">
+    {{!-- {{this.addressDetail.address}} , 
+{{this.addressDetail.street}}<br> --}}
+<span>Pin :</span>{{this.addressDetail.pinCode}} ,<br> 
+{{this.addressDetail.country}}
+{{!-- {{this.addressDetail.country}} --}}
+</div>
+
+<div class="col-md-2">
+    <div class="text-end">
+         <a href="/editAddress/{{this._id}}" class="bg-transparent" ><i class="fa-solid fa-pen-to-square"></i></a>
+            <button class="bg-transparent ms-3" onclick="removeAddress('{{this._id}}')"><i class="fal fa-times text-danger"></i></button>
+    </div>
+</div>
+
+</div>
+  {{/each}}
+    {{/if}}
+</section>
+
+
+<script>
+    function removeAddress(id){
+        console.log(id)
+        $.ajax ({
+            url:'/removeAddress/'+id,
+            method:'get',
+            success:(response)=>{
+                if(response.status){
+                    alert('Address removed')
+                   location.reload()
+                }else{
+                    console.log('err')
+                }
+            }
+        })
+    }
+</script>
+
+<script>
+
+    $("#address-form").submit((e) => {
+        e.preventDefault()
+        $.ajax({
+            url: '/userAddress',
+            method: 'post',
+            data: $('#address-form').serialize(),
+            success: (response) => {
+                //alert(response)
+                if (response.status) {
+                    //alert(response)
+                    location.href = '/address'
+                } else {
+                    alert(response)
+                }
+            }
+        })
+    })
+</script>

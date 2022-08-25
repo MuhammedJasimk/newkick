@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    {{!-- <title>{{title}}</title> --}}
+    {{!-- ----------------user------------------------- --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    {{#if user_link}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.4/jquery.xdomainrequest.min.js" integrity="sha512-AqrEfeiUZBu9nWx7jHZlve8pPY3Mavhhwobv+pVxTSc10vpElmhFNDqe8DopVSvApKGfUrOQO3OshR8avd+pTw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+    <script src="/javascripts/jquery.min.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />    
+     {{!-- font awsome --}}
+     <script src="https://kit.fontawesome.com/13d316fbdb.js" crossorigin="anonymous"></script>
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/stylesheets/preloader.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/stylesheets/animate.min.css">
+    <link rel="stylesheet" href="/stylesheets/magnific-popup.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/meanmenu.css">
+    <link rel="stylesheet" href="/stylesheets/animate.min.css">
+    <link rel="stylesheet" href="/stylesheets/slick.css">
+    <link rel="stylesheet" href="/stylesheets/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/stylesheets/themify-icons.css">
+    <link rel="stylesheet" href="/stylesheets/nice-select.css">
+    <link rel="stylesheet" href="/stylesheets/ui-range-slider.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+     {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.4/jquery.xdomainrequest.min.js" integrity="sha512-AqrEfeiUZBu9nWx7jHZlve8pPY3Mavhhwobv+pVxTSc10vpElmhFNDqe8DopVSvApKGfUrOQO3OshR8avd+pTw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+    {{/if}}
+
+
+
+    {{#if admin_link}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.4/jquery.xdomainrequest.min.js" integrity="sha512-AqrEfeiUZBu9nWx7jHZlve8pPY3Mavhhwobv+pVxTSc10vpElmhFNDqe8DopVSvApKGfUrOQO3OshR8avd+pTw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+    <script src="/javascripts/ajax.js"></script>
+     {{!-- <script src="/javascripts/admin/chart.js"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.2/chart.min.js" integrity="sha512-zjlf0U0eJmSo1Le4/zcZI51ks5SjuQXkU0yOdsOBubjSmio9iCUp8XPLkEAADZNBdR9crRy3cniZ65LF2w8sRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <script src="https://kit.fontawesome.com/13d316fbdb.js" crossorigin="anonymous"></script>
+        <link href="/plugins/morris/morris.css" rel="stylesheet">
+        <link href="/stylesheets/bootstrap.min_admin.css" rel="stylesheet" type="text/css">
+        <link href="/stylesheets/icons_admin.css" rel="stylesheet" type="text/css">
+        <link href="/stylesheets/style_admin.css" rel="stylesheet" type="text/css">
+        {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+
+        
+        <!-- DataTables -->
+        <link href="/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <!-- Responsive datatable examples -->
+        <link href="/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    {{/if}}
+  </head>
+  <body>
+
+  
+    {{#if admin_header}}
+    {{>admin-header}}
+    {{else if user_header}}
+    {{>user-header}}
+    {{/if}}
+
+    
+
+    {{{body}}}
+    {{#if user_link}}
+    {{>user_footer}}
+    {{/if}}
+
+     {{#if user_link}}
+     <!-- JS here -->
+     
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/waypoints.min.js"></script>
+    <script src="/javascripts/bootstrap.bundle.min.js"></script>
+    <script src="/javascripts/tweenmax.js"></script>
+    <script src="/javascripts/owl.carousel.min.js"></script>
+    <script src="/javascripts/slick.min.js"></script>
+    <script src="/javascripts/jquery-ui-slider-range.js"></script>
+    <script src="/javascripts/jquery.meanmenu.min.js"></script>
+    <script src="/javascripts/isotope.pkgd.min.js"></script>
+    <script src="/javascripts/wow.min.js"></script>
+    <script src="/javascripts/jquery.scrollUp.min.js"></script>
+    <script src="/javascripts/countdown.min.js"></script>
+    <script src="/javascripts/jquery.magnific-popup.min.js"></script>
+    <script src="/javascripts/parallex.js"></script>
+    <script src="/javascripts/imagesloaded.pkgd.min.js"></script>
+    <script src="/javascripts/jquery.nice-select.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+    
+    <script src="/javascripts/validation.js"></script>
+   
+    <script src="/javascripts/ajax.js"></script>
+    {{/if}}
+
+    {{#if admin_link}}
+        {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.4/jquery.xdomainrequest.min.js" integrity="sha512-AqrEfeiUZBu9nWx7jHZlve8pPY3Mavhhwobv+pVxTSc10vpElmhFNDqe8DopVSvApKGfUrOQO3OshR8avd+pTw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+        {{!-- <script src="/javascripts/ajax.js"></script> --}}
+        <!-- jQuery  -->
+        <script src="/javascripts/validation.js"></script>
+        <script src="/javascripts/admin/jquery.min.js"></script>
+       
+        <script src="/javascripts/admin/popper.min.js"></script>
+        <script src="/javascripts/admin/bootstrap.min.js"></script>
+        <script src="/javascripts/admin/modernizr.min.js"></script>
+        <script src="/javascripts/admin/detect.js"></script>
+        <script src="/javascripts/admin/fastclick.js"></script>
+        <script src="/javascripts/admin/jquery.slimscroll.js"></script>
+        <script src="/javascripts/admin/jquery.blockUI.js"></script>
+        <script src="/javascripts/admin/waves.js"></script>
+        <script src="/javascripts/admin/jquery.nicescroll.js"></script>
+        <script src="/javascripts/admin/jquery.scrollTo.min.js"></script>
+
+        <script src="/plugins/skycons/skycons.min.js"></script>
+        <script src="/plugins/raphael/raphael-min.js"></script>
+        <script src="/plugins/morris/morris.min.js"></script>
+        
+        <script src="/pages/dashborad.js"></script>
+        
+
+         <!-- Required datatable js -->
+         <script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+         <script src="/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+         <!-- Buttons examples -->
+         <script src="/plugins/datatables/dataTables.buttons.min.js"></script>
+         <script src="/plugins/datatables/buttons.bootstrap4.min.js"></script>
+         <script src="/plugins/datatables/jszip.min.js"></script>
+         <script src="/plugins/datatables/pdfmake.min.js"></script>
+         <script src="/plugins/datatables/vfs_fonts.js"></script>
+         <script src="/plugins/datatables/buttons.html5.min.js"></script>
+         <script src="/plugins/datatables/buttons.print.min.js"></script>
+         <script src="/plugins/datatables/buttons.colVis.min.js"></script>
+         <!-- Responsive examples -->
+         <script src="/plugins/datatables/dataTables.responsive.min.js"></script>
+         <script src="/plugins/datatables/responsive.bootstrap4.min.js"></script>
+ 
+         <!-- Datatable init js -->
+         <script src="/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="/js/app.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#datatable2').DataTable();  
+            } );
+        </script>
+
+        <!-- App js -->
+        <script src="/javascripts/admin/app.js"></script>
+        <script>
+             /* BEGIN SVG WEATHER ICON */
+             if (typeof Skycons !== 'undefined'){
+            var icons = new Skycons(
+                {"color": "#fff"},
+                {"resizeClear": true}
+                ),
+                    list  = [
+                        "clear-day", "clear-night", "partly-cloudy-day",
+                        "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                        "fog"
+                    ],
+                    i;
+
+                for(i = list.length; i--; )
+                icons.set(list[i], list[i]);
+                icons.play();
+            };
+
+        // scroll
+
+        $(document).ready(function() {
+        
+        $("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#cecece",boxzoom:true});
+        $("#boxscroll2").niceScroll({cursorborder:"",cursorcolor:"#cecece",boxzoom:true}); 
+        
+        });
+        </script>
+
+    {{/if}}
+
+  </body>
+</html>

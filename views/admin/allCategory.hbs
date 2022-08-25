@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="page-title-box">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <h4 class="page-title">All Category</h4>
+            </div>
+
+        </div> <!-- end row -->
+    </div>
+    <!-- end page-title -->
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card m-b-30">
+                <div class="card-body">
+
+                    <table id="datatable" class="table dataTable no-footer"
+                        style="border-collapse: collapse; border-spacing: 0;font-size:14px; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Category Id</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each category}}
+                            <tr>
+                                <td>
+                                    <img class="product_listing" src="/images/categories/{{this.image}}" alt="">
+                                </td>
+                                <td>{{this._id}}</td>
+                                <td>{{this.Categoryname}}</td>
+                                <td>{{this.status}}</td>
+                                <td>
+                                    {{!-- <a href="" class="text-dark"><span  class="mdi mdi-grease-pencil mr-3" style="font-size:20px;"></span></a>
+                                    <a href="" class="text-danger"><span  class="mdi mdi-delete-forever " style="font-size:20px;"></span></a> --}}
+                                {{!-- <button type="submit" class="btn w-100 btn-info waves-effect waves-light">Edit</button> --}}
+                                <a type="submit " class="btn w-100 btn-info waves-effect waves-light" href="/admin/catEdit/{{this._id}}">Edit</a>
+                                </td>
+                            </tr>
+                            {{/each}}
+                           
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+
+
+
+</div>
+<!-- container-fluid -->
+
+</div>
+<!-- content -->
+
+{{!-- <footer class="footer">
+    © 2019 - 2020 Stexo <span class="d-none d-sm-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i>
+        by Themesdesign</span>.
+</footer> --}}
+
+</div>

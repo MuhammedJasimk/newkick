@@ -1,0 +1,43 @@
+<section class="login-area pt-150 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="basic-login">
+                    <h3 class="text-center mb-60">Update Profile</h3>
+                    <form action="/editProfile" method="post">
+                        <label for="name">Username</label>
+                        <input id="username" name="Username" type="text" onkeyup="validatename()" value="{{userData.Username}}" placeholder="Enter Username" />
+                        <p id="username-err" class="text-danger"></p>
+                        <label for="email-id">Email Address</label>
+                        <input id="emailid" name="Email" type="text" onkeyup="validateEmail()" value="{{userData.Email}}" placeholder="Email address..." />
+                        <p id="emailid-err" class="text-danger"></p>
+                        <label for="name">Mobile Number</label>
+                        <input id="mobilenumber" name="mobileNumber" type="text" onkeyup="validatemobile()" value="{{userData.mobileNumber}}" placeholder="Enter Mobile Number" />
+                        <p id="mobilenumber-err" class="text-danger"></p>
+
+                        
+                        {{!-- <label class="me-1">Gender</label>
+                        <div class="d-flex align-items-center">
+                             <label for="male" class="me-1">Male</label><br>
+                            <input type="radio" id="male" name="gender" value="Male" class="w-auto m-0 h-auto">
+                              <label for="female" class="ms-3 me-1">Female</label><br>
+                              <input type="radio" id="female" name="gender" value="Female" class="w-auto m-0 h-auto">
+                        </div>
+
+                        <label for="name">Address</label>
+                        <input type="text" name="street" value="{{userAddress.[0].addressDetail.address}}"  id="street" onkeyup="checkAddress()"
+                            placeholder="Street address" />
+
+                        <input type="text" name="address" value="{{userAddress.[0].addressDetail.street}}"  id="address" onkeyup="checkAddresstwo()"
+                            placeholder="Apartment, suite, unit etc. (optional)" />
+                        <input type="text" id="country" onkeyup="country()" value="{{userAddress.[0].addressDetail.pinCode}}"  name="country" placeholder="Country" />
+
+                        <input type="text" id="pin" onkeyup="checkpin()"  value="{{userAddress.[0].addressDetail.country}}" name="pin" placeholder="Postcode / Zip" /> --}}
+                        <div class="mt-10"></div>
+                        <button class="s-btn btn s-btn-4 w-100" onclick="return updatedata()">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

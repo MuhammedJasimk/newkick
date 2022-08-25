@@ -1,0 +1,529 @@
+<style>
+    .accordion-item {
+        margin-bottom: 20px;
+        border-radius: 0px !important;
+        box-shadow: 0px 1px 4px 0px #bfbfbf;
+    }
+
+    .accordion-button[aria-expanded="true"] {
+        background-color: #fcfcfc;
+        color: #404040;
+        /*   box-shadow:0px 1px 2px 2px #fffff7; */
+    }
+
+    .accordion-button:after {
+        color: #404040;
+    }
+</style>
+
+<main>
+
+    <!-- breadcrumb area start -->
+    <div class="breadcrumb-area-3 pt-150 pb-25">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-12">
+                    <div class="breadcrumb-wrapper-2 text-center">
+                        <h3>Checkout</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb area end -->
+
+    <!-- based on accordion technique from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion_symbol -->
+
+    <!-- checkout-area start -->
+    <section class="checkout-area pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="checkbox-form">
+                        <h3>Billing Details</h3>
+                        <div class="row">
+
+
+                            <!-- based on accordion technique from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion_symbol -->
+
+                            <div class="container mt-3">
+                                <div class="accordion" id="accordionPanelsStayOpenExample">
+                                    <form action="" class="checkout-form">
+                                        {{#each address}}
+                                        <div class="accordion-item">
+                                            <div class="accordion-header" name="address"
+                                                id="panelsStayOpen-heading{{this._id}}">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapse{{this._id}}"
+                                                    aria-expanded="true"
+                                                    aria-controls="panelsStayOpen-collaps{{this._id}}"
+                                                    id="accordion1btn">
+                                                    <input class="form-check-input  chkAll me-2 addresscheck" required
+                                                        name="address" type="radio" value="{{this._id}}"
+                                                        id="chkAccordion1All">{{this.addressDetail.address}}
+                                                </button>
+                                            </div>
+                                            <div id="panelsStayOpen-collapse{{this._id}}"
+                                                class="accordion-collapse collapse"
+                                                aria-labelledby="panelsStayOpen-headingOne">
+                                                <div class="accordion-body ms-3">
+
+                                                    <input class="border-0" readonly type="text"
+                                                        value="{{this.addressDetail.address}} , {{this.addressDetail.street}}"><br>
+                                                    <input class="border-0" readonly type="text"
+                                                        value="{{this.addressDetail.pinCode}} , {{this.addressDetail.country}}"><br>
+                                                    <input class="border-0" readonly type="text"
+                                                        value="{{this.addressDetail.mobile}} , {{this.addressDetail.email}}">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{/each}}
+                                    </form>
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12 mt-3">
+                                <div class="coupon-accordion">
+                                    <!-- ACCORDION START -->
+                                    <h6 id="showlogin" class="btn  btn-primary"><a href="#"> Add New Address</a> </h6>
+                                    <div id="checkout-login" class="coupon-content">
+                                        <div class="coupon-info">
+                                            <form action="#" id="address-form">
+                                                <div class="checkout-form-list">
+                                                    <label>Street Address <span class="required">*</span></label>
+                                                    <input type="text" name="street" id="street"
+                                                        onkeyup="checkAddress()" placeholder="Street address" />
+                                                    <span id="streetErr" class="text-danger"></span>
+                                                </div>
+                                                <div class="checkout-form-list">
+                                                    <label>Apartment / suite,<span class="required">*</span></label>
+                                                    <input type="text" name="address" id="address"
+                                                        onkeyup="checkAddresstwo()"
+                                                        placeholder="Apartment, suite, unit etc. (optional)" />
+                                                    <span id="addressErr" class="text-danger"></span>
+                                                </div>
+
+
+                                                <div class="checkout-form-list">
+                                                    <label>State / County <span class="required">*</span></label>
+                                                    <input type="text" id="country" onkeyup="country()" name="country"
+                                                        placeholder="" />
+                                                    <span id="countryErr" class="text-danger"></span>
+                                                </div>
+
+                                                <div class="checkout-form-list">
+                                                    <label>Postcode / Zip <span class="required">*</span></label>
+                                                    <input type="text" id="pin" onkeyup="checkpin()" name="pin"
+                                                        placeholder="Postcode / Zip" />
+                                                    <span id="pinErr" class="text-danger"></span>
+                                                </div>
+
+                                                <div class="checkout-form-list">
+                                                    <label>Email Address <span class="required">*</span></label>
+                                                    <input type="email" id="emailid" onkeyup="validateEmail()"
+                                                        name="email" placeholder="" />
+                                                    <span id="emailid-err" class="text-danger"></span>
+                                                </div>
+
+                                                <div class="checkout-form-list">
+                                                    <label>Phone <span class="required">*</span></label>
+                                                    <input type="text" value="+91" id="mobilenumber"
+                                                        onkeyup="validatemobile()" name="phone" placeholder="" />
+                                                    <span id="mobilenumber-err" class="text-danger"></span>
+                                                </div>
+
+                                                <div class="text-end w-100">
+                                                    <button class="btn btn-light ">Cancel</button>
+                                                    <button class="btn btn-success ms-2"
+                                                        onclick="return validateOrderForm()">Save</button>
+                                                </div>
+                                                <input type="text" name="userId" value="{{user._id}}" hidden>
+                                                <p id="formErr" class="text-danger"></p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- ACCORDION END -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div>
+                        <div class="col-12 mt-3">
+                            <div class="coupon-all mt-3">
+                                {{!-- <label>
+                                    <strong><span class="amount text-dark ms-2 fs-5">Wallet Amount</span></strong>
+                                    <span class="ms-4"><small class="text-secondary"> RS </small> </span><span
+                                        class="text-success fw-bold fs-5"> {{getWallet}}</span>
+                                </label> --}}
+                                <div class="row">
+                                    <div class="col-12">
+                                        <form id="coupen_check">
+                                            <div class="coupon-all mt-0">
+                                                <p class="text-danger " id="coupn-err"></p>
+                                                <div class="coupon d-flex mb-3 w-100">
+                                                    <input id="coupon_code" class="input-text w-100 m-0"
+                                                        name="coupon_code" value="" placeholder="Coupon code"
+                                                        type="text">
+                                                    <button class="s-btn  s-btn-2" name="apply_coupon"
+                                                        type="submit">Apply</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="your-order mb-30 ">
+                        <h3>Your order</h3>
+                        <div class="your-order-table table-responsive">
+                            <table>
+                                <form action="" id="checkout-form" class="checkout-form">
+                                    <tbody>
+                                        <tr class="cart-subtotal">
+                                            <th>Cart Subtotal</th>
+                                            <td><span class="amount">Rs.{{total.subTotal}}</span></td>
+                                        </tr>
+                                        <tr class="cart-subtotal">
+                                            <th>Tax</th>
+                                            <td><span class="amount">Rs.{{total.tax}}</span></td>
+                                        </tr>
+                                        <tr class="cart-subtotal">
+                                            <th>Shipping Charge</th>
+                                            <td><span class="amount">Free</span></td>
+                                        </tr>
+                                        <tr class="cart-subtotal" id="">
+                                            <th>Coupon</th>
+                                            <td><span class="amount" id="couponId">0</span></td>
+                                        </tr>
+                                        <tr class="order-total">
+                                            <th>Order Total</th>
+                                            <td><strong><span class="amount fw-bold text-danger"
+                                                        id="grandtotal">Rs.{{total.total}}</span></strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="2" class="">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" name="payment_method_wlt"
+                                                        onclick="checkwallet({{total.total}})" type="checkbox"
+                                                        value="wallet" id="defaultCheck1">
+                                                    <label class="form-check-label fw-bold" for="defaultCheck1">
+                                                        Use Wallet <span class="text-success"> ({{getWallet}}) </span>
+                                                    </label>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                        <tr class="shipping" id="method">
+                                            <th>Payment VIA</th>
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <input type="radio" id="payment_cod" value="COD"
+                                                            name="payment_method" required>
+                                                        <label>
+                                                            <strong><span
+                                                                    class="amount text-dark ms-2">COD</span></strong>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="payment_razorpay" value="razorepay"
+                                                            name="payment_method" required>
+                                                        <strong><span
+                                                                class="amount text-dark ms-2">Razorpay</span></strong>
+                                                        {{!-- <p id="err"></p> --}}
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="payment_paypal" value="paypal"
+                                                            name="payment_method" required>
+                                                        <strong><span
+                                                                class="amount text-dark ms-2">Paypal</span></strong>
+                                                        {{!-- <p id="err"></p> --}}
+                                                    </li>
+
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <input type="text" name="userId" value="{{user._id}}" hidden>
+                                            <td colspan="2">
+                                                <div class="order-button-payment mt-20">
+                                                    <button type="submit" class="s-btn s-btn-2"
+                                                        onclick="return checkaddress()">Place order</button>
+                                                </div>
+                                                <p id="addressAddErr" class="mt-3 text-danger"></p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </form>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- checkout-area end -->
+
+    <!-- subscribe area start -->
+    <div class="subscribe-area pb-100 gray-bg-2 pt-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-12">
+                    <div class="section-title text-center">
+                        <span class="p-subtitle">OUR NEWSLETTER</span>
+                        <h3 class="p-title pb-15 mb-0">join our newsletter</h3>
+                        <p class="p-desc  pb-15">Subscribe to the Puik Store mailing list to receive updates on new
+                            arrivals, special offers<br>
+                            and other discount information.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xxl-8 col-xl-8">
+                    <div class="subscribe-form text-center">
+                        <form action="#">
+                            <input type="text" placeholder="Your email address...">
+                            <button type="submit" class="subscribe-btn subscribe-btn-1">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- subscribe area end -->
+
+
+</main>
+
+
+<script>
+    $(".checkout-form").submit((e) => {
+        e.preventDefault()
+        $.ajax({
+            url: '/placeOrder',
+            method: 'post',
+            data: $('.checkout-form').serialize(),
+            success: (response) => {
+                if (response.codSuccess) {
+                    location.href = '/orderSuccess'
+                }
+                else if (response.wallet) {
+                    location.href = '/orderSuccess'
+                }
+                else if (response.razorepay) {
+                    alert(response)
+                    console.log("yeee")
+                    razorpayPayment(response)
+                } else {
+                    console.log("ttyyy")
+                    console.log("test")
+                    for (let i = 0; i < response.links.length; i++) {
+                        console.log("done")
+                        if (response.links[i].rel === 'approval_url') {
+                            location.href = response.links[i].href;
+                            console.log("final");
+                        }
+
+                    }
+                }
+            }
+        })
+    })
+
+    //function paypalPayment() {
+    // console.log("paypal")
+    // }
+
+
+
+    function razorpayPayment(order) {
+        console.log("yeee")
+        var options = {
+            "key": "rzp_test_z7AuC90c1sj1kE", // Enter the Key ID generated from the Dashboard
+            "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "New KIcks Corp",
+            "description": "Test Transaction",
+            "image": "https://example.com/your_logo",
+            "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "handler": function (response) {
+                verifyPayment(response, order)
+            },
+            "prefill": {
+                "name": "Gaurav Kumar",
+                "email": "gaurav.kumar@example.com",
+                "contact": "9999999999"
+            },
+            "notes": {
+                "address": "Razorpay Corporate Office"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+    }
+
+    function verifyPayment(payment, order) {
+        console.log("aaaa")
+        console.log(payment, order)
+
+        $.ajax({
+            url: '/verify_payment',
+            method: 'post',
+            data: {
+                payment,
+                order,
+            },
+            success: (response) => {
+                if (response.status) {
+                    location.href = '/orderSuccess'
+                } else {
+                    alert("Payment Failed")
+                }
+            }
+
+        })
+    }
+</script>
+
+<script>
+
+    $("#address-form").submit((e) => {
+        e.preventDefault()
+        $.ajax({
+            url: '/userAddress',
+            method: 'post',
+            data: $('#address-form').serialize(),
+            success: (response) => {
+                //alert(response)
+                if (response.status) {
+                    //alert(response)
+                    location.href = '/placeOrder'
+                } else {
+                    //alert(response)
+                }
+            }
+        })
+    })
+</script>
+
+<script>
+    $('input.chkAll').on('click', function () {
+        event.stopPropagation();
+        $('#panelsStayOpen-collapseOne').addClass('show');
+    })
+
+    // check all checkbox
+
+    // 
+    $('.accordion-button').on('click', function () {
+        console.log(event.target)
+        console.log(event.currentTarget)
+        event.preventDefault()
+        event.stopPropagation();
+        if (event.target.classList.contains('chkAll')) {
+
+        }
+    })
+
+    var accordion = $('#accordion1btn')
+    accordion.addEventListener('show.bs.collapse', function () {
+        console.log('in this listen')
+    })
+
+</script>
+
+<script>
+    function checkwallet(amount) {
+        console.log(amount)
+        $.ajax({
+            url: '/checkWallet/' + amount,
+            method: 'get',
+            success: (response) => {
+                console.log(response)
+                if (response.walletE) {
+                    let finalamount = amount - response.amount
+                    console.log(finalamount)
+                    let isChecked = $('#defaultCheck1')[0].checked
+                    if (isChecked) {
+                        document.getElementById('total_amount').innerHTML = "Rs." + finalamount
+                    } else {
+                        document.getElementById('total_amount').innerHTML = "Rs." + amount
+                    }
+                } else {
+                    alert(response)
+                    var check = document.getElementById('method').value
+                    let isChecked = $('#defaultCheck1')[0].checked
+                    if (isChecked) {
+                        document.getElementById('method').style = "display:none"
+                        document.getElementById('payment_cod').required = false;
+                        document.getElementById('payment_paypal').required = false;
+                        document.getElementById('payment_razorpay').required = false;
+                    } else {
+                        document.getElementById('method').style = "display:table-row"
+                        document.getElementById('payment_cod').required = true;
+                        document.getElementById('payment_paypal').required = true;
+                        document.getElementById('payment_razorpay').required = true;
+                    }
+                }
+            }
+
+        })
+    }
+</script>
+
+<script>
+    $("#coupen_check").submit((e) => {
+        e.preventDefault()
+        $.ajax({
+            url: '/addcoupon',
+            method: 'post',
+            data: $('#coupen_check').serialize(),
+            success: (response) => {
+                var err = document.getElementById('coupn-err')
+                if (response.invalid) {
+                    err.innerHTML = "Enter valid Coupon"
+                } else if (response.dateErr) {
+                    err.innerHTML = "Coupon has expired "
+                } else if (response.used) {
+                    err.innerHTML = "Already used"
+                } else {
+                    console.log(response.a.rate)
+                  response.finalAmount =  parseInt(response.finalAmount)
+                    document.getElementById('grandtotal').innerHTML = response.finalAmount
+                    console.log(response.finalAmount)
+                    document.getElementById('couponId').innerHTML = response.a.rate + "%"
+                    document.getElementById('coupnRw').style = "display:block !important "
+
+                }
+            }
+
+        })
+    })
+</script>
+
+<script>
+    function checkaddress() {
+        var getSelectedValue = document.querySelector('input[name="address"]:checked');
+        console.log('check')
+        if (getSelectedValue != null) {
+            return true;
+        } else {
+            console.log('heee')
+            document.getElementById('addressAddErr').innerHTML ="Select Any Address"
+           return false;
+        }
+
+    }
+
+</script>

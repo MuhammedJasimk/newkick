@@ -1,0 +1,112 @@
+
+<div class="container-fluid">
+    <div class="page-title-box">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <h4 class="page-title">All Users</h4>
+            </div>
+
+        </div> <!-- end row -->
+    </div>
+    <!-- end page-title -->
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card m-b-30">
+                <div class="card-body">
+
+                    <table id="datatable" class="table dataTable no-footer"
+                        style="border-collapse: collapse; border-spacing: 0; width: 100%; font-size:12px;">
+                        <thead>
+                            <tr>
+                                <th class="product-thumbnail">Date</th>
+                                <th class="cart-product-name">Address</th>
+                                <th class="product-subtotal">Contact</th>
+                                <th class="product-remove">Amount</th>
+                                <th class="product-remove">Payment</th>
+                                <th class="product-remove">Status</th>
+                                <th class="product-remove" colspan="2">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each Orders}}
+                            <tr>
+                                <td>
+                                    <p>{{this.date}}</p>
+                                </td>
+                                <td>
+                                    <p class="m-0">{{this.address.address}}</p>
+                                    <p class="m-0"> {{this.address.street}},<span>Pin: </span>{{this.address.pinCode}}
+                                    </p>
+                                    <p class="m-0"> {{this.address.country}}</p>
+                                </td>
+                                <td>
+                                    <p class="m-0">{{this.address.mobile}}</p>
+                                    <p class="m-0">{{this.address.email}}</p>
+                                </td>
+                                <td>
+                                    {{#if this.Wallet}}
+                                            <p class="m-0">{{this.paymentmethod}} : <span>{{this.total}}</span></p>
+                                            <p class="m-0">Wallet : <span>{{this.Wallet}}</span></p>
+                                            <p class="m-0">Total : <span>{{this.totalAmount}}</span></p>
+                                            
+                                            {{else}}
+                                            <p class="m-0">{{this.paymentmethod}} : <span>{{this.totalAmount}}</span></p>
+                                            {{/if}}
+                                </td>
+                                <td>
+                                    <p class="m-0">{{this.paymentmethod}}</p>
+                                </td>
+                                <td>
+                                    <p class="m-0">{{this.status}}</p>
+                                </td>
+                                {{!-- <td>onchange="statusUpdate(status,'{{this._id}}')" --}}
+                                    {{#if this.cancelled}}
+                                    <td></td>
+                                    {{else}}
+                                    <td>
+                                        <select class="form-control" id="statusValue"  name="status" onchange="statusUpdate(value,'{{this._id}}')" >
+                                            <option value="{{this.status}}" selected hidden>{{this.status}}</option>
+                                            <option value="Palced">Placed</option>
+                                            <option value="Processing">Processing</option>
+                                            <option value="shipped">shipped</option>
+                                            <option value="Deliverd">Deliverd</option>
+                                            {{!-- <option value="Cancel">Cancelled</option> --}}
+                                        </select>
+                                     </td>
+                                {{/if}}
+                                <td>
+                                        <a href="/admin/orderDetails/{{this._id}}" class="btn btn-success">Details</a>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+
+
+
+</div>
+<!-- container-fluid -->
+
+</div>
+<!-- content -->
+
+{{!-- <footer class="footer">
+    © 2019 - 2020 Stexo <span class="d-none d-sm-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i>
+        by Themesdesign</span>.
+</footer> --}}
+
+</div>
+
+ <script type="text/javascript">
+     var select = document.getElementById('statusValue');
+     var value = select.options[select.selectedIndex].value;
+     //console.log(value)
+</script>
+

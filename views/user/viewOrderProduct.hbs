@@ -1,0 +1,88 @@
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area-3 pt-130 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-12">
+                <div class="breadcrumb-wrapper-2 text-center">
+                    <h3>Orders</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb area end -->
+<div class="container  mt-4  mb-100">
+    <div class="row">
+        <div class="col-md-8">
+            {{#each product}}
+                <div class="mb-3">
+                    <div class="row shadow p-3  d-flex align-items-center">
+                        <div class="col-md-2">
+                            <img src="/images/product/{{this.image.[0]}}" alt="" style="width:80px;">
+                        </div>
+                        <div class="col-md-5">
+                                 <a href="/product_detail/{{this.item}}">
+                            <p class="m-0">{{this.Name}}</p>
+                             </a>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="m-0">Actual Price <span class="ms-2">{{this.price}}</span></p>
+                            <p class="m-0">Discounted Price <span class="ms-2">{{this.discounted_price}}</span></p>
+                            <p class="m-0">Qty <span class="ms-2">{{this.quantity}}</span></p>
+                            {{!-- <p class="m-0">Subtotal <span class="ms-2">{{this.total}}</span></p> --}}
+                            {{!-- <p class="m-0">Coupon<span class="ms-2">{{this.discounted}}</span></p> --}}
+                        </div>
+                        {{!-- <div class="col-md-4">
+                            <p class="m-0">Amount Paid<span class=" ms-2">{{this.total}}</span></p>
+                        </div> --}}
+                        <div class="col-md-2">
+                          <a href="/productInvoice/{{this._id}}/{{this.id}}" class="text-primary"><p class="m-0 text-primary">Invoice</p></a>
+                        </div>
+                    </div>
+                </div>
+           
+            {{/each}}
+        </div>
+        <div class="col-md-4">
+            <div class="row justify-content-end">
+                <div class="col-md-12">
+                    <div class="cart-page-total pt-3">
+                        <h2>Order summary</h2>
+                        <table class="table">
+                            <tbody>
+                                {{#each product}}
+                                <tr>
+                                    <td >
+                                        <p>{{this.Name}}</p>
+                                        {{!-- <p>Tax</p> --}}
+                                    </td>
+                                    <td >
+                                        <p>{{this.ProTotal}}</p>
+                                        {{!-- <p>{{this.tax}}</p> --}}
+                                    </td>
+                                </tr>
+                                {{/each}}
+                                <tr class="fw-bold">
+                                    <td  class="mt-5"><p class="fw-bold mt-4 text-dark">Subtotal</p></td>
+                                    <td ><p class="fw-bold mt-4 text-dark">{{subtotal.[0].subtotal}}</p></td>
+                                </tr>
+                                <tr class="fw-bold">
+                                    <td ><p class="fw-bold text-dark">Tax</p></td>
+                                    <td ><p class="fw-bold text-dark">{{product.[0].tax}}</p></td>
+                                </tr>
+                                <tr class="fw-bold ">
+                                    <td ><p class="fw-bold text-success">Coupon Discount</p></td>
+                                    <td ><p class="fw-bold text-success">{{discount}}</p></td>
+                                </tr>
+                                <tr class="fw-bold text-danger">
+                                    <td>Amount Paid</td>
+                                    <td>{{totalamount}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

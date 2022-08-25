@@ -1,0 +1,134 @@
+<main>
+    <!-- breadcrumb area start -->
+    <div class="breadcrumb-area-3 pt-130 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-12">
+                    <div class="breadcrumb-wrapper-2 text-center">
+                        <h3>Cart</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb area end -->
+
+    {{#if notempty}}
+    <!-- Cart Area Strat-->
+    <section class="cart-area pt-5 pb-50">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <form action="#">
+                        <div class="table-content table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="product-thumbnail">Images</th>
+                                        <th class="cart-product-name">Product</th>
+                                        <th class="product-price">Price</th>
+                                        {{!-- <th class="product-quantity">Quantity</th> --}}
+                                        <th class="product-subtotal">QTY</th>
+                                        <th class="product-remove">Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each product}}
+                                    <tr>
+                                        <td class="product-thumbnail"><a href="#"><img
+                                                    src="/images/product/{{this.product.image.[0]}}" alt=""></a></td>
+
+                                        <td class="product-name"><a href="#">{{this.product.Name}}</a></td>
+                                        <td class="product-price"><span
+                                                class="amount">{{this.product.discounted_price}}</span>
+                                        </td>
+                                        {{!-- <td class="product-subtotal"><span class="amount">{{this.price}}</span>
+                                        </td> --}}
+                                        <td>
+                                            <div class="d-flex border px-3 py-1 " style="width: 200px;">
+                                                <div class=""><button class="bg-transparent" style="font-size:19px;"
+                                                        onclick="changequantity('{{this._id}}','{{this.product._id}}','{{../login._id}}',-1)">-</button>
+                                                </div>
+                                                {{!-- <input type="text" class="border-0 w-100 text-center"
+                                                    id="quantity" value="{{this.quantity}}" /> --}}
+                                                <p class="border-0 m-0  w-100 text-center" id="{{this.product._id}}">
+                                                    {{this.quantity}}</p>
+                                                <div class=""><button class="bg-transparent"
+                                                        onclick="changequantity('{{this._id}}','{{this.product._id}}','{{../login._id}}',1)">+</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="product-remove"><button class="bg-transparent"
+                                                onclick="deleteItem('{{this._id}}','{{this.product._id}}')"><i
+                                                    class="fal fa-times text-danger"></i></button></td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                   
+                    <div class="row justify-content-end">
+                        <div class="col-md-12">
+                            <div class="cart-page-total pt-3">
+                                <h2>Cart totals</h2>
+                                <ul class="mb-20">
+                                    <li>Subtotal <span>Rs <span id="subtotal">{{total.subTotal}}</span></span></li>
+                                    {{!-- <li>Total <span>Rs <span id="subtotal">{{total.subTotal}}</span></span></li> --}}
+                                    <li>Tax <span>Rs <span id="tax">{{total.tax}}</span></span></li>
+                                    <li>Shipping Charge <span><span id="shipping">Free</span></span></li>
+                                    <li id="coupnRw" class="d-none">Coupon <span><span id="couponId"></span></span></li>
+                                    <li >Grand Total <span class="fw-bold fs-6 text-danger">Rs <span
+                                                id="grandtotal">{{total.total}}</span></span></li>
+                                </ul>
+                                <a class="s-btn s-btn-2" href="/placeOrder">Proceed to checkout</a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </section>
+    <!-- Cart Area End-->
+    {{else}}
+    <section class="cart-area pt-5 pb-50 text-center">
+        <img src="/images/cart.png" alt="" style="width:20%;">
+        <div class="container mt-4">
+            <h1 class="text-center">0 items in your cart</h1>
+
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- subscribe area start -->
+    <div class="subscribe-area pb-100 gray-bg-2 pt-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-12">
+                    <div class="section-title text-center">
+                        <span class="p-subtitle">OUR NEWSLETTER</span>
+                        <h3 class="p-title pb-15 mb-0">join our newsletter</h3>
+                        <p class="p-desc  pb-15">Subscribe to the Puik Store mailing list to receive updates on new
+                            arrivals, special offers<br>
+                            and other discount information.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xxl-8 col-xl-8">
+                    <div class="subscribe-form text-center">
+                        <form action="#">
+                            <input type="text" placeholder="Your email address...">
+                            <button type="submit" class="subscribe-btn subscribe-btn-1">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- subscribe area end -->
+
+</main>
+
