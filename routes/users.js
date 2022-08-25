@@ -37,12 +37,13 @@ const verifyLogTwo = (req, res, next) => {
     next()
   } else {
 
-    res.render('user/login', { user_link: true, user_header: true });
+    res.render('user/login', { user_link: true, user_header: true ,signup:req.session.signupsuccess});
   }
 }
 
 /* GET users listing. */
 router.get('/', verifyLog, async function (req, res, next) {
+  req.session.signupsuccess=null;
   let cartcount = await userHelper.getCartCount(req.session.user._id)
   productHelper.getFeaturproducts().then((product) => {
     categoryHelpers.getCategory().then((category) => {
@@ -128,6 +129,7 @@ router.post('/submit', (req, res) => {
   console.log(signUpdata);
   userHelper.otp(req.body, signUpdata).then((response) => {
     if (response.status) {
+      req.session.signupsuccess ="Account Created Successfully";
       res.redirect('/login')
     } else {
       res.redirect('/otp')
@@ -376,6 +378,11 @@ router.get('/viewOrderProduct/:id', verifyLogTwo, async (req, res) => {
 
 router.get('/cancelOrder/:id', verifyLogTwo, (req, res) => {
   userHelper.cancelOrder(req.params.id, req.session.user._id)
+  res.redirect('/orders')
+})
+
+router.get('/returnproduct/:id', verifyLogTwo, (req, res) => {
+  userHelper.returnproduct(req.params.id, req.session.user._id)
   res.redirect('/orders')
 })
 

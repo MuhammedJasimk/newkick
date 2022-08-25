@@ -13,6 +13,6 @@
 
 module.exports={
     accountSid:'AC8b9b64ed7600ec0d1889a3cd2b602242',
-    authToken:'820438d86b6a30c313a17a753558690c',
+    authToken:'cd8453e6de1b3c7e210490d62582eaa2',
     serviceSID:'VA4ab2905741664de7e572ebd443fd7896',   
 }

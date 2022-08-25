@@ -775,6 +775,33 @@ module.exports = {
 
 
     },
+    returnproductk: (orderId, userId) => {
+        console.log(orderId, userId);
+        console.log(orderId);
+        return new Promise(async (resolve, reject) => {
+            let totalamount = await db.get().collection(collection.ORDER_COLLECTION).findOne({ _id: ObjectId(orderId) })
+            db.get().collection(collection.ORDER_COLLECTION).updateOne({ _id: ObjectId(orderId) }, { $set: { status: "Returned", cancelled: true } })
+            db.get().collection(collection.ORDER_COLLECTION).updateOne({ _id: ObjectId(orderId) }, { $set: { totalAmount: 0 } })
+            console.log(totalamount.totalAmount);
+            console.log(totalamount.paymentmethod);
+            if (totalamount.paymentmethod != "COD" && totalamount.status != " pending") {
+                console.log("Not cod");
+                if (totalamount.totalAmount > 1) {
+                    console.log("+0");
+                    db.get().collection(collection.WALLET_COLLECTION).updateOne({ user: ObjectId(userId) }, { $inc: { amount: totalamount.totalAmount } })
+                } else {
+                    console.log("0");
+                    db.get().collection(collection.WALLET_COLLECTION).updateOne({ user: ObjectId(userId) }, { $set: { amount: totalamount.totalAmount } })
+                }
+                console.log(totalamount.totalAmount);
+            } else {
+                console.log("cod sds");
+            }
+
+        })
+
+
+    },
 
     addAddress: (userId, data) => {
 
