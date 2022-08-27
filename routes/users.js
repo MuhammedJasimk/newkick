@@ -58,9 +58,11 @@ router.get('/', verifyLog, async function (req, res, next) {
 
 
 router.get('/login', (req, res, next) => {
-  res.render('user/login', { user_nav_bg: true, user_link: true, user_header: true, logerr: req.session.logerrUser, activeErr: req.session.activeErr })
+  var signupsuccess =req.session.signupsuccess
+  res.render('user/login', { user_nav_bg: true, user_link: true, user_header: true, logerr: req.session.logerrUser, activeErr: req.session.activeErr ,signupsuccess})
   req.session.logerrUser = false
   req.session.activeErr = false
+  req.session.signupsuccess =false
 })
 
 router.get('/logout', (req, res) => {

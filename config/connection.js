@@ -4,8 +4,8 @@ const state ={
 }
 module.exports.connect=function(done){
   
-   //const url = 'mongodb://localhost:27017'
-    const url = 'mongodb+srv://newkick:newkick@cluster0.maw8oze.mongodb.net/?retryWrites=true&w=majority'
+    //const url = 'mongodb://localhost:27017'
+   const url = 'mongodb+srv://newkick:newkick@cluster0.maw8oze.mongodb.net/?retryWrites=true&w=majority'
     const dbname='shoppy' 
 
     mongoClient.connect(url,(err,data)=>{
