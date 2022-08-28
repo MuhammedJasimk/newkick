@@ -367,6 +367,9 @@ router.get('/viewOrderProduct/:id', verifyLogTwo, async (req, res) => {
     var subtotal = await userHelper.subtotal(req.params.id)
     var totalamount = product[0].totalAmount
     var discount = (product[0].tax + subtotal[0].subtotal) -totalamount
+    if(discount <10 ){
+      discount=0;
+    }
     discount= parseInt(discount)
     product.map((product)=>{
       product.tax= parseInt(product.tax)

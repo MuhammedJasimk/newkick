@@ -1341,29 +1341,7 @@ module.exports = {
                         tax: { $sum: { $multiply: [{ $toInt: '$discounted_price' }, 0.01] } },
                     }
                 },
-                // {
-                //     $project: {
-                //         discounted: 1,
-                //         discounted_price:1,
-                //         Name: 1, discounted_rate: 1, price: 1, qty: 1, image: 1, address: 1, mobile: 1, mobile: 1, email: 1, pinCode: 1, street: 1, country: 1, date: 1, paymentmethod: 1,
-                //         date: 1, paymentmethod: 1,
-                //         tax: { $sum: { $multiply: [{ $toInt: '$discounted_price' }, 0.01] } },
-                //     }
-                // },
-                // {
-                //     $project: {
-                //         discounted_price: 1,
-                //         Name: 1, discounted_rate: 1, price: 1, qty: 1, image: 1, address: 1, mobile: 1, mobile: 1, email: 1, pinCode: 1, street: 1, country: 1, date: 1, paymentmethod: 1,
-                //         tax: 1, date: 1, paymentmethod: 1,
-                //         // dprice:{$divide:[{ $toInt:"$total"},100]},
-                //         dprice: { $divide: [{ $subtract: [{ $toInt: "$discounted_rate" }, { $toInt: '$discounted' }] }, { $toInt: "$qty" }] },
-                //         // TotalPrice: { $sum: [{ $toInt: '$discounted_price' }, { $toInt: "$tax" }] }
-                //         tax: { $sum: { $multiply: [{ $toInt: '$discounted_price' }, 0.01] } },
-                //         // discounted:{$multiply:[{$divide:[{ $toInt:"$total"},100]},{ $toInt:"$coupon_Off"}]},
-                //         TotalPrice: { $sum: [{ $multiply: [{ $toInt: '$discounted_price' }, 0.01] }, { $toInt: '$discounted_price' }] },
-                //         //  TotalPrice:{ $sum: [{ $toInt: '$discounted_price' },0.01,{$toInt: '$discounted_price'}]},
-                //     }
-                // }
+                
             ]).toArray()
             console.log(invoice[0]);
             resolve(invoice[0])
