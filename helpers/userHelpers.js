@@ -1371,10 +1371,10 @@ module.exports = {
 
     },
 
-    checkWallet: () => {
+    checkWallet: (id) => {
 
         return new Promise((resolve, reject) => {
-            db.get().collection(collection.WALLET_COLLECTION).findOne().then((response) => {
+            db.get().collection(collection.WALLET_COLLECTION).findOne({user:ObjectId(id)}).then((response) => {
                 console.log(response);
                 resolve(response)
             })

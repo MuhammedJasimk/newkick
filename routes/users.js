@@ -227,6 +227,7 @@ router.get('/cart', verifyLogTwo, async (req, res) => {
 })
 
 router.post('/changeProductCount', (req, res, next) => {
+  console.log("test");
   console.log(req.body);
   console.log("test");
   userHelper.chengeProductCount(req.body).then(async (response) => {
@@ -571,6 +572,9 @@ router.get('/productInvoice/:id/:item', async (req, res) => {
 
   proData.tax = parseInt(proData.tax)
     proData.discounted = parseInt(proData.discounted)
+    if ( proData.discounted <=10){
+      proData.discounted=0;
+    }
 
   res.render('user/product_invoice', {category, user_link: true, user_header: true, login: req.session.user, proData })
 
@@ -578,7 +582,7 @@ router.get('/productInvoice/:id/:item', async (req, res) => {
 
 router.get('/checkWallet/:id', (req, res) => {
   console.log(req.params.id);
-  userHelper.checkWallet().then((response) => {
+  userHelper.checkWallet(req.body.user._id).then((response) => {
     if (req.params.id > response.amount) {
       response.walletE = true
       res.json(response)
