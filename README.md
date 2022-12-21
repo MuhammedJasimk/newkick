@@ -19,6 +19,14 @@ Hey, check out the Live-App, just visit https://newkick.shop/.
  and Razorpay
 *  Product, user & category management on admin 
  side
+ 
+ ## Sample images
+
+![Screenshot from 2022-20-12](https://res.cloudinary.com/di70gas60/image/upload/v1671616429/https-newkick-shop_e0ugkd.png)
+![Screenshot from 2022-20-12](https://res.cloudinary.com/di70gas60/image/upload/v1671616429/https-newkick-shop-allProducts_hzxapz.png)
+![Screenshot from 2022-20-12](https://res.cloudinary.com/di70gas60/image/upload/v1671616428/https-newkick-shop-cart-_ldr8fo.png)
+![Screenshot from 2022-20-12](https://res.cloudinary.com/di70gas60/image/upload/v1671616513/Screenshot_2022-12-21_152459_ti5sdy.png)
+
 
 
 ## Run Locally
@@ -46,7 +54,7 @@ Start the server
    | Email             | Name | Password | Role       |
    |-------------------|----------|----------|--------------|
    | admin@gmail.com | admin    | admin    | Administrator |
-   | jasimmohd22@gmail.com | Jasim     | user@123    | User  |
+   | user.newkick | User     | user@user    | User  |
 
 
 ## Installation
